@@ -1,0 +1,51 @@
+AppBundle\Entity\Events:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\EventsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        eventName:
+            type: string
+            length: 255
+            nullable: true
+            unique: true
+            column: event_name
+        eventDate:
+            type: date
+            nullable: true
+            column: event_date
+        eventTopic:
+            type: text
+            column: event_topic
+        eventMentor:
+            type: string
+            length: 255
+            column: event_mentor
+        eventMentorjob:
+            type: string
+            length: 255
+            column: event_mentorjob
+        eventTime:
+            type: date
+            column: event_time
+        eventParticipant:
+            type: string
+            length: 255
+            column: event_participant
+        eventPrice:
+            type: string
+            length: 255
+            column: event_price
+        eventDetail:
+            type: text
+            column: event_detail
+        eventPhoto:
+            type: string
+            length: 255
+            column: event_photo
+    lifecycleCallbacks: {  }

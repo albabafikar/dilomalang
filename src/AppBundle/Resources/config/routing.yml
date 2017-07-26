@@ -1,0 +1,25 @@
+app_register:
+    path: /register
+    defaults:
+      _controller: AppBundle:Admin:create
+
+app_login:
+    path: /login
+    defaults:
+      _controller: AppBundle:Admin:login
+
+app_index:
+    path: /
+    defaults:
+      _controller: AppBundle:Admin:index
+
+app_logout:
+    path: /logout
+    defaults:
+      _controller: AppBundle:Admin:logout                       
+
+
+#  app_login:
+#     path: /login
+#     defaults:
+#         _controller: AppBundle:Admin:login

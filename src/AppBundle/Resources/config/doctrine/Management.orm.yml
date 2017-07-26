@@ -1,0 +1,24 @@
+AppBundle\Entity\Management:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ManagementRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        manageDatafb:
+            type: string
+            length: 255
+            column: manage_datafb
+        manageDatatwitter:
+            type: string
+            length: 255
+            column: manage_datatwitter
+        manageDataregister:
+            type: string
+            length: 255
+            column: manage_dataregister
+    lifecycleCallbacks: {  }

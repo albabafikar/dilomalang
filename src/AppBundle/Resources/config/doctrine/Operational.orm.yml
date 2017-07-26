@@ -1,0 +1,33 @@
+AppBundle\Entity\Operational:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\OperationalRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        operationalName:
+            type: string
+            length: 255
+            unique: true
+            column: Operational_name
+        operationalDate:
+            type: string
+            length: 255
+            column: Operational_date
+        operationalQty:
+            type: string
+            length: 255
+            column: Operational_qty
+        operationalUnitprice:
+            type: string
+            length: 255
+            column: Operational_unitprice
+        operationalTotal:
+            type: string
+            length: 255
+            column: Operational_total
+    lifecycleCallbacks: {  }

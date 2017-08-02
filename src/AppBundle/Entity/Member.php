@@ -30,14 +30,19 @@ class Member
     private $memberTotal;
 
     /**
-     * @var string
+     * @var int
      */
     private $memberGenre;
 
     /**
-     * @var string
+     * @var int
      */
     private $memberStatus;
+
+    /**
+     * @var \DateTime
+     */
+    private $memberDate;
 
 
     /**
@@ -122,7 +127,7 @@ class Member
     /**
      * Set memberGenre
      *
-     * @param string $memberGenre
+     * @param integer $memberGenre
      * @return Member
      */
     public function setMemberGenre($memberGenre)
@@ -135,7 +140,7 @@ class Member
     /**
      * Get memberGenre
      *
-     * @return string 
+     * @return integer
      */
     public function getMemberGenre()
     {
@@ -145,7 +150,7 @@ class Member
     /**
      * Set memberStatus
      *
-     * @param string $memberStatus
+     * @param integer $memberStatus
      * @return Member
      */
     public function setMemberStatus($memberStatus)
@@ -158,10 +163,31 @@ class Member
     /**
      * Get memberStatus
      *
-     * @return string 
+     * @return integer
      */
     public function getMemberStatus()
     {
         return $this->memberStatus;
+    }
+
+
+    /**
+     * @param $memberDate
+     * @return $this
+     */
+    public function setMemberDate($memberDate)
+    {
+        $this->memberDate = new \DateTime($memberDate);
+
+        return $this;
+    }
+
+
+    /**
+     * @return \DateTime
+     */
+    public function getMemberDate()
+    {
+        return $this->memberDate;
     }
 }

@@ -12,21 +12,22 @@ AppBundle\Entity\Member:
         memberName:
             type: string
             length: 255
-            column: Member_name
+            column: member_name
         memberActivity:
             type: string
             length: 255
-            column: Member_activity
+            column: member_activity
         memberTotal:
             type: string
             length: 255
-            column: Member_Total
+            column: member_total
         memberGenre:
-            type: string
-            length: 255
-            column: Member_Genre
+            type: integer
+            column: member_genre
         memberStatus:
-            type: string
-            length: 255
-            column: Member_Status
+            type: integer
+            column: member_status
+        memberDate:
+            type: datetime
+            column: member_date
     lifecycleCallbacks: {  }

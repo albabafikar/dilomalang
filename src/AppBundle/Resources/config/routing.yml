@@ -1,3 +1,11 @@
+app_routing:
+    resource: "@AppBundle/Resources/config/routing/routing_member.yml"
+    prefix: /member
+
+app_event:
+    resource: "@AppBundle/Resources/config/routing/routing_event.yml"
+    prefix: /event
+
 app_register:
     path: /register
     defaults:

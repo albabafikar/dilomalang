@@ -65,8 +65,9 @@ class AdminController extends Controller
     {
         return $this->redirect($this->generateUrl('app_login'));
     }
+      
+    return $this->render('AppBundle:home:home.html.twig');
 
-      return 'ini home';
   }
 
   public function logoutAction(Request $request)

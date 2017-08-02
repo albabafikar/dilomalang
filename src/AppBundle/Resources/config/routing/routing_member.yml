@@ -1,0 +1,4 @@
+app_member_create:
+    path: /create-member
+    defaults:
+      _controller: AppBundle:Member:create

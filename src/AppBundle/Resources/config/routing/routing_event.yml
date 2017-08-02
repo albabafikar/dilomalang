@@ -1,0 +1,4 @@
+app_event_create:
+    path: /create-event
+    defaults:
+      _controller: AppBundle:Event:create

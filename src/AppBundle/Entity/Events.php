@@ -106,7 +106,7 @@ class Events
      */
     public function setEventDate($eventDate)
     {
-        $this->eventDate = $eventDate;
+        $this->eventDate = new \DateTime($eventDate);
 
         return $this;
     }
@@ -198,7 +198,7 @@ class Events
      */
     public function setEventTime($eventTime)
     {
-        $this->eventTime = $eventTime;
+        $this->eventTime = new \DateTime($eventTime);
 
         return $this;
     }

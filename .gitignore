@@ -16,3 +16,4 @@ bower_components/
 .phpintel/
 .php_cs.cache
 test/
+/web/uploads/

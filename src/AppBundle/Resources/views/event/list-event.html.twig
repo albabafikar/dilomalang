@@ -1,0 +1,73 @@
+{% extends 'subLayout.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            <center>Daftar Semua Kegiatan</center>
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <table class="table table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Tanggal</th>
+                                    <th>Tema</th>
+                                    <th>Pemateri</th>
+                                    <th>Kategory</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% if data|length > 0 %}
+                            {% set i = 1 %}
+                            {% for dat in data %}
+                                <tr>
+                                    <td>{{ i }}</td>
+                                    <td>{% if dat.eventDate is defined and not null %}{{ dat.eventDate|date('d m Y') }}{% endif %}</td>
+                                    <td>{% if dat.eventName is defined and not null %}{{ dat.eventName }}{% endif %}</td>
+                                    <td>{% if dat.eventMentor is defined and not null %}{{ dat.eventMentor }}{% endif %}</td>
+                                    <td>
+                                        {% if dat.eventCategory is defined and not null %}
+                                            {% if dat.eventCategory == 1 %}
+                                                <span class="label label-success">Workshop Teknis</span>
+                                            {% elseif dat.eventCategory == 2 %}
+                                                <span class="label label-success">Workshop Desain</span>
+                                            {% elseif dat.eventCategory == 3 %}
+                                                <span class="label label-success">Workshop Manajemen</span>
+                                            {% elseif dat.eventCategory == 4 %}
+                                                <span class="label label-success">Business Gathering</span>
+                                            {% elseif dat.eventCategory == 5 %}
+                                                <span class="label label-success">Kompetisi Lokal</span>
+                                            {% else %}
+                                                <span class="label label-success">Dilo On Campus</span>
+                                            {% endif %}
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <a href="{{ path('app_event_update',{id: dat.id}) }}" class="btn btn-primary btn-xs">UPDATE</a>
+                                        <a href="{{ path('app_event_delete',{id: dat.id}) }}" class="btn btn-danger btn-xs">DELETE</a>
+                                    </td>
+                                </tr>
+                                {% set i = i + 1 %}
+                            {% endfor %}
+                            {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block customJS %}
+    <script>
+        $('.dataTable').dataTable({
+
+        });
+    </script>
+{% endblock %}

@@ -40,6 +40,11 @@ class Events
     private $eventMentorjob;
 
     /**
+     * @var int
+     */
+    private $eventCategory;
+
+    /**
      * @var \DateTime
      */
     private $eventTime;
@@ -234,6 +239,22 @@ class Events
     public function getEventParticipant()
     {
         return $this->eventParticipant;
+    }
+
+    /**
+     * @param $eventCategory
+     * @return $this
+     */
+    public function setEventCategory($eventCategory)
+    {
+        $this->eventCategory = $eventCategory;
+
+        return $this;
+    }
+
+    public function getEventCategory()
+    {
+        return $this->eventCategory;
     }
 
     /**

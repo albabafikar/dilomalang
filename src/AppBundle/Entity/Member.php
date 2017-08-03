@@ -40,6 +40,11 @@ class Member
     private $memberStatus;
 
     /**
+     * @var string
+     */
+    private $memberEmail;
+
+    /**
      * @var \DateTime
      */
     private $memberDate;
@@ -170,6 +175,24 @@ class Member
         return $this->memberStatus;
     }
 
+    /**
+     * @param $memberEmail
+     * @return $this
+     */
+    public function setMemberEmail($memberEmail)
+    {
+        $this->memberEmail = $memberEmail;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMemberEmail()
+    {
+        return $this->memberEmail;
+    }
 
     /**
      * @param $memberDate

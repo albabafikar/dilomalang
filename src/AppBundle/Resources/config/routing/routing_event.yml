@@ -2,3 +2,18 @@ app_event_create:
     path: /create-event
     defaults:
       _controller: AppBundle:Event:create
+
+app_event_list:
+    path: /list-event
+    defaults:
+      _controller: AppBundle:Event:getAllEvent
+
+app_event_delete:
+    path: /delete-event/{id}
+    defaults:
+      _controller: AppBundle:Event:deleteEvent
+
+app_event_update:
+    path: /update-event/{id}
+    defaults:
+      _controller: AppBundle:Event:updateEvent

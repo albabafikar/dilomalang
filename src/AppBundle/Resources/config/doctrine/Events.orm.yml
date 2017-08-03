@@ -22,30 +22,42 @@ AppBundle\Entity\Events:
         eventTopic:
             type: text
             column: event_topic
+            nullable: true
         eventMentor:
             type: string
             length: 255
             column: event_mentor
+            nullable: true
+        eventCategory:
+            type: integer
+            column: event_category
+            nullable: true
         eventMentorjob:
             type: string
             length: 255
             column: event_mentorjob
+            nullable: true
         eventTime:
-            type: date
+            type: time
             column: event_time
+            nullable: true
         eventParticipant:
             type: string
             length: 255
             column: event_participant
+            nullable: true
         eventPrice:
             type: string
             length: 255
             column: event_price
+            nullable: true
         eventDetail:
             type: text
             column: event_detail
+            nullable: true
         eventPhoto:
             type: string
             length: 255
             column: event_photo
+            nullable: true
     lifecycleCallbacks: {  }

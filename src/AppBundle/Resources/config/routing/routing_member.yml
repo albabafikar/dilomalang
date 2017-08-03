@@ -2,3 +2,18 @@ app_member_create:
     path: /create-member
     defaults:
       _controller: AppBundle:Member:create
+
+app_member_list:
+   path: /list-member
+   defaults:
+      _controller: AppBundle:Member:getAllMember
+
+app_member_update:
+    path: /update-member/{id}
+    defaults:
+      _controller: AppBundle:Member:updateMember
+
+app_member_delete:
+   path: /delete-member/{id}
+   defaults:
+       _controller: AppBundle:Member:deleteMember

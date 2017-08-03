@@ -27,6 +27,10 @@ AppBundle\Entity\Member:
         memberStatus:
             type: integer
             column: member_status
+        memberEmail:
+            type: string
+            length: 255
+            column: member_email
         memberDate:
             type: datetime
             column: member_date

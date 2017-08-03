@@ -89,7 +89,7 @@
     <parameter key="database_port">null</parameter>
     <parameter key="database_name">dilo</parameter>
     <parameter key="database_user">root</parameter>
-    <parameter key="database_password">menara34</parameter>
+    <parameter key="database_password">null</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -1812,7 +1812,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5983520a2bf798.36230633</argument>
+            <argument>5983527859a021.06782233</argument>
           </service>
         </argument>
       </argument>
@@ -1941,7 +1941,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5983520a2bf798.36230633</argument>
+            <argument>5983527859a021.06782233</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2270,7 +2270,7 @@
         <argument key="port">null</argument>
         <argument key="dbname">dilo</argument>
         <argument key="user">root</argument>
-        <argument key="password">menara34</argument>
+        <argument key="password">null</argument>
         <argument key="charset">UTF8</argument>
         <argument key="driverOptions" type="collection"/>
         <argument key="defaultTableOptions" type="collection"/>

@@ -1,0 +1,77 @@
+{% extends 'subLayout.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            <center>Update Laporan Event</center>
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <form method="post">
+                            <div class="form-group">
+                                <p>Nama Event</p>
+                                <div class="form-line">
+                                    <input type="text" name="report_title" id="" class="form-control" value="{% if data.reportTitle is defined and not null %}{{ data.reportTitle }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Tanggal Event</p>
+                                <div class="form-line">
+                                    <input type="text" name="report_date" id="" class="datepicker form-control" value="{% if data.reportDate is defined and not null %}{{ data.reportDate|date('d m Y') }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Topic Event</p>
+                                <div class="form-line">
+                                   <input type="text" name="report_topic" id="" class="form-control" value="{% if data.reportTopic is defined and not null %}{{ data.reportTopic }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Nama Mentor</p>
+                                <div class="form-line">
+                                    <input type="text" name="report_mentor" id="" class="form-control" value="{% if data.reportMentor is defined and not null %}{{ data.reportMentor }}{% endif %}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <p>Event Participant</p>
+                                <div class="form-line">
+                                    <input type="text" name="report_member" id="" class="form-control" value="{% if data.reportMember is defined and not null %}{{ data.reportMember }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Detail Event</p>
+                                <div class="form-line">
+                                    <textarea type="text" cols="30" rows="10" name="report_detail" id="" class="form-control" value="{% if report.reportDetail is defined and not null %}{{ report.reportDetail }}{% endif %}">
+                                    </textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <p>Event Category</p>
+                                <select name="report_category" id="" class="form-control">
+                                    <option value="">-- Pilih Event Category</option>
+                                    <option value="1" {% if data.reportCategory is defined and not null %}{% if data.reportCategory == 1 %}selected{% endif %}{% endif %}>Workshop Teknis</option>
+                                    <option value="2" {% if data.reportCategory is defined and not null %}{% if data.reportCategory == 2 %}selected{% endif %}{% endif %}>Workshop Desain</option>
+                                    <option value="3" {% if data.reportCategory is defined and not null %}{% if data.reportCategory == 3 %}selected{% endif %}{% endif %}>Workshop Manajemen</option>
+                                    <option value="4" {% if data.reportCategory is defined and not null %}{% if data.reportCategory == 4 %}selected{% endif %}{% endif %}>Business Gathering</option>
+                                    <option value="5" {% if data.reportCategory is defined and not null %}{% if data.reportCategory == 5 %}selected{% endif %}{% endif %}>Kompetisi Lokal</option>
+                                    <option value="6" {% if data.reportCategory is defined and not null %}{% if data.reportCategory == 6 %}selected{% endif %}{% endif %}>Dilo on Campus</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <p>Masukkan Foto Event</p>
+                                <input type="file" accept="image/*" name="report_photo" id="" class="form-control">
+                            </div>
+                            <button class="btn btn-primary waves-effect">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

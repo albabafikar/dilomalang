@@ -1,0 +1,19 @@
+app_input_operational:
+    path: /input-operational
+    defaults:
+      _controller: AppBundle:operational:create
+
+app_operational_list:
+   path: /list-operational
+   defaults:
+      _controller: AppBundle:operational:getAlloperational
+
+app_operational_update:
+    path: /update-operational/{id}
+    defaults:
+      _controller: AppBundle:operational:updateoperational
+
+app_operational_delete:
+   path: /delete-operational/{id}
+   defaults:
+       _controller: AppBundle:operational:deleteoperational

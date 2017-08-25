@@ -1,0 +1,88 @@
+{% extends 'subLayout.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            <center>UPDATE LAPORAN OPERASIONAL</center>
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <form method="post">
+                            <div class="form-group">
+                            <p>Kategori</p>
+                                <select name="reportoperational_category" id="" class="form-control">
+                                    <option value="1" {% if data.reportoperationalCategory is defined and not null %}{% if data.reportoperationalCategory == 1 %}selected{% endif %}{% endif %}>Operasional</option>
+                                    <option value="2" {% if data.reportoperationalCategory is defined and not null %}{% if data.reportoperationalCategory == 2 %}selected{% endif %}{% endif %}>Kegiatan</option>
+                                    <option value="3" {% if data.reportoperationalCategory is defined and not null %}{% if data.reportoperationalCategory == 3 %}selected{% endif %}{% endif %}>Gaji</option>
+                                    <option value="4" {% if data.reportoperationalCategory is defined and not null %}{% if data.reportoperationalCategory == 4 %}selected{% endif %}{% endif %}>Pengadaan ATK</option>
+                                    <option value="5" {% if data.reportoperationalCategory is defined and not null %}{% if data.reportoperationalCategory == 5 %}selected{% endif %}{% endif %}>refreshment</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <p>Item Pengajuan</p>
+                                <div class="form-line">
+                                    <input type="text" name="reportoperational_name" class="form-control" value="{% if data.reportoperationalName is defined and not null %}{{ data.reportoperationalName }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Bulan Pengajuan</p>
+                                <select name="reportoperational_month" id="" class="form-control">
+                                    <option value="1" {% if data.reportoperationalMonth is defined and not null %}{% if data.reportoperationalMonth == 1 %}selected{% endif %}{% endif %}>Januari</option>
+                                    <option value="2" {% if data.reportoperationalMonth is defined and not null %}{% if data.reportoperationalMonth == 2 %}selected{% endif %}{% endif %}>Februari</option>
+                                    <option value="3" {% if data.reportoperationalMonth is defined and not null %}{% if data.reportoperationalMonth == 3 %}selected{% endif %}{% endif %}>Maret</option>
+                                    <option value="4" {% if data.reportoperationalMonth is defined and not null %}{% if data.reportoperationalMonth == 4 %}selected{% endif %}{% endif %}>April</option>
+                                    <option value="5" {% if data.reportoperationalMonth is defined and not null %}{% if data.reportoperationalMonth == 5 %}selected{% endif %}{% endif %}>Mei</option>
+                                    <option value="6" {% if data.reportoperationalMonth is defined and not null %}{% if data.reportoperationalMonth == 6 %}selected{% endif %}{% endif %}>Juni</option>
+                                    <option value="7" {% if data.reportoperationalMonth is defined and not null %}{% if data.reportoperationalMonth == 7 %}selected{% endif %}{% endif %}>Juli</option>
+                                    <option value="8" {% if data.reportoperationalMonth is defined and not null %}{% if data.reportoperationalMonth == 8 %}selected{% endif %}{% endif %}>Agustus</option>
+                                    <option value="9" {% if data.reportoperationalMonth is defined and not null %}{% if data.reportoperationalMonth == 9 %}selected{% endif %}{% endif %}>September</option>
+                                    <option value="10" {% if data.reportoperationalMonth is defined and not null %}{% if data.reportoperationalMonth == 10 %}selected{% endif %}{% endif %}>Oktober</option>
+                                    <option value="11" {% if data.reportoperationalMonth is defined and not null %}{% if data.reportoperationalMonth == 11 %}selected{% endif %}{% endif %}>November</option>
+                                    <option value="12" {% if data.reportoperationalMonth is defined and not null %}{% if data.reportoperationalMonth == 12 %}selected{% endif %}{% endif %}>Desember</option>
+                                </select>
+                                </div>
+                           <div class="form-group">
+                                <p>Tahun Pengajuan</p>
+                                <select name="reportoperational_year" id="" class="form-control">
+                                    <option value="1" {% if data.reportoperationalYear is defined and not null %}{% if data.reportoperationalYear == 1 %}selected{% endif %}{% endif %}>2017</option>
+                                    <option value="2" {% if data.reportoperationalYear is defined and not null %}{% if data.reportoperationalYear == 2 %}selected{% endif %}{% endif %}>2018</option>
+                                    <option value="3" {% if data.reportoperationalYear is defined and not null %}{% if data.reportoperationalYear == 3 %}selected{% endif %}{% endif %}>2019</option>
+                                    <option value="4" {% if data.reportoperationalYear is defined and not null %}{% if data.reportoperationalYear == 4 %}selected{% endif %}{% endif %}>2020</option>
+                                    <option value="5" {% if data.reportoperationalYear is defined and not null %}{% if data.reportoperationalYear == 5 %}selected{% endif %}{% endif %}>2021</option>
+                                    <option value="6" {% if data.reportoperationalYear is defined and not null %}{% if data.reportoperationalYear == 6 %}selected{% endif %}{% endif %}>2022</option>
+                                    <option value="7" {% if data.reportoperationalYear is defined and not null %}{% if data.reportoperationalYear == 7 %}selected{% endif %}{% endif %}>2023</option>
+                                    <option value="8" {% if data.reportoperationalYear is defined and not null %}{% if data.reportoperationalYear == 8 %}selected{% endif %}{% endif %}>2024</option>
+                                    <option value="9" {% if data.reportoperationalYear is defined and not null %}{% if data.reportoperationalYear == 9 %}selected{% endif %}{% endif %}>2025</option>
+                                    <option value="10" {% if data.reportoperationalYear is defined and not null %}{% if data.reportoperationalYear == 10 %}selected{% endif %}{% endif %}>...</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <p>Kuantitas (QTY)</p>
+                                <div class="form-line">
+                                    <input type="text" name="reportoperational_qty" class="form-control" value="{% if data.reportoperationalQty is defined and not null %}{{ data.reportoperationalQty }}{% endif %}">
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <p>Harga Satuan (Rp)</p>
+                                <div class="form-line">
+                                    <input type="text" name="reportoperational_unitprice" class="form-control" value="{% if data.reportoperationalUnitprice is defined and not null %}{{ data.reportoperationalUnitprice }}{% endif %}">
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <p>Total Pengajuan</p>
+                                <div class="form-line">
+                                    <input type="text" name="reportoperational_total" class="form-control" value="{% if data.reportoperationalTotal is defined and not null %}{{ data.reportoperationalTotal }}{% endif %}">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary waves-effect">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

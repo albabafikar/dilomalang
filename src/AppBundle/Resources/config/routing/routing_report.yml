@@ -1,0 +1,25 @@
+app_report_create:
+    path: /create-report
+    defaults:
+      _controller: AppBundle:Report:create
+
+app_report_list:
+    path: /list-report
+    defaults:
+      _controller: AppBundle:Report:getAllReport
+
+app_report_delete:
+  path: /delete-report/{id}
+  defaults:
+    _controller: AppBundle:Report:deleteReport
+
+
+app_report_update:
+  path: /update-report/{id}
+  defaults:
+    _controller: AppBundle:Report:updateReport
+
+app_report_view:
+    path: /view-report/{id}
+    defaults:
+      _controller: AppBundle:Report:viewReport 

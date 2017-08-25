@@ -12,22 +12,32 @@ AppBundle\Entity\Operational:
         operationalName:
             type: string
             length: 255
-            unique: true
             column: Operational_name
-        operationalDate:
-            type: string
-            length: 255
-            column: Operational_date
+        operationalCategory:
+            type: integer
+            nullable: true
+            column: Operational_category
+        operationalMonth:
+            type: integer
+            nullable: true
+            column: Operational_month
+        operationalYear:
+            type: integer
+            nullable: true
+            column: Operational_year   
         operationalQty:
             type: string
             length: 255
+            nullable: true
             column: Operational_qty
         operationalUnitprice:
             type: string
             length: 255
             column: Operational_unitprice
+            nullable : true
         operationalTotal:
             type: string
             length: 255
+            nullable: true
             column: Operational_total
     lifecycleCallbacks: {  }

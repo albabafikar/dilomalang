@@ -9,16 +9,47 @@ AppBundle\Entity\Management:
             generator:
                 strategy: AUTO
     fields:
+        manageMonth:
+            type: integer
+            column: manage_month
+        manageYear:
+            type: integer
+            column: manage_year
+            nullable: true
+        manageDataMember:
+            type: string
+            length: 255
+            column: manage_datamember
+            nullable: true
+        manageDataUser:
+            type: string
+            length: 255
+            column: manage_datauser
+            nullable: true
         manageDatafb:
             type: string
             length: 255
             column: manage_datafb
+            nullable: true
         manageDatatwitter:
             type: string
             length: 255
             column: manage_datatwitter
-        manageDataregister:
+            nullable: true
+        manageDataig:
             type: string
             length: 255
-            column: manage_dataregister
+            column: manage_dataig
+            nullable: true
+        manageDataStartup:
+            type: string
+            length: 255
+            column: manage_datastartup
+            nullable: true
+        manageDataCommunity:
+            type: string
+            length: 255
+            column: manage_datacommunity
+            
+      
     lifecycleCallbacks: {  }

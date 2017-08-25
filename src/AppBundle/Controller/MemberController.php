@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dzaki
- * Date: 02/08/17
- * Time: 20:29
- */
 
 namespace AppBundle\Controller;
 
@@ -29,7 +23,7 @@ class MemberController extends Controller
             $member->setMemberStatus($request->get('member_status'));
             $member->setMemberEmail($request->get('member_email'));
             $member->setMemberDate(date('Y-m-d',strtotime($request->get('member_date'))));
-
+            $member->setMemberPhone($request->get('member_phone'));
             $em->persist($member);
             $em->flush();
 
@@ -75,7 +69,7 @@ class MemberController extends Controller
             $member->setMemberStatus($request->get('member_status'));
             $member->setMemberEmail($request->get('member_email'));
             $member->setMemberDate(date('Y-m-d',strtotime($request->get('member_date'))));
-
+            $member->setMemberPhone($request->get('member_phone'));
             $em->persist($member);
             $em->flush();
 

@@ -49,6 +49,12 @@ class Member
      */
     private $memberDate;
 
+     /**
+     * @var \DateTime
+     */
+    private $memberPhone;
+
+
 
     /**
      * Get id
@@ -213,4 +219,25 @@ class Member
     {
         return $this->memberDate;
     }
+
+ /**
+     * @param $memberEmail
+     * @return $this
+     */
+    public function setMemberPhone($memberPhone)
+    {
+        $this->memberPhone = $memberPhone;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMemberPhone()
+    {
+        return $this->memberPhone;
+    }
+
+    
 }

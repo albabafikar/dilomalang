@@ -1,0 +1,10 @@
+app_management_create:
+    path: /create-Management
+    defaults:
+      _controller: AppBundle:Management:create
+
+app_management_list:
+   path: /list-Management
+   defaults:
+      _controller: AppBundle:Management:getAllManagement
+

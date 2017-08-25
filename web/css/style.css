@@ -1882,7 +1882,7 @@
     color: #fff !important; }
 
 .bg-blue {
-  background-color: #2196F3 !important;
+  background-color: #094A7E !important;
   color: #fff; }
   .bg-blue .content .text,
   .bg-blue .content .number {
@@ -7707,7 +7707,7 @@ fieldset[disabled] .form-control {
 
 /* Login Page ================================== */
 .login-page {
-  background-color: #00BCD4;
+  background-color: #E91E63;
   padding-left: 0;
   max-width: 360px;
   margin: 5% auto;

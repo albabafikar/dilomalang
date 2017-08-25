@@ -1,0 +1,24 @@
+app_reportoperation_input:
+    path: /input-ReportOperation
+    defaults:
+      _controller: AppBundle:ReportOperation:create
+
+app_reportoperation_list:
+   path: /list-ReportOperation
+   defaults:
+      _controller: AppBundle:ReportOperation:getAllReportOperation
+
+app_reportoperation_update:
+    path: /update-ReportOperation/{id}
+    defaults:
+      _controller: AppBundle:ReportOperation:updateReportOperation
+
+app_reportoperation_delete:
+   path: /delete-ReportOperation/{id}
+   defaults:
+       _controller: AppBundle:ReportOperation:deleteReportOperation
+
+app_reportoperation_view:
+    path: /view-ReportOperation/{id}
+    defaults:
+        _controller: AppBundle:ReportOperation:ViewReportOperation

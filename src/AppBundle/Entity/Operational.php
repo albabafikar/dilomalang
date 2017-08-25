@@ -22,7 +22,12 @@ class Operational
     /**
      * @var string
      */
-    private $operationalDate;
+    private $operationalMonth;
+
+    /**
+     * @var string
+     */
+     private $operationalYear;
 
     /**
      * @var string
@@ -34,11 +39,20 @@ class Operational
      */
     private $operationalUnitprice;
 
+        /**
+     * @var string
+     */
+    private $operationalUnit;
+
     /**
      * @var string
      */
     private $operationalTotal;
 
+    /**
+     * @var string
+     */
+    private $operationalCategory;
 
     /**
      * Get id
@@ -163,5 +177,74 @@ class Operational
     public function getOperationalTotal()
     {
         return $this->operationalTotal;
+    }
+
+     /**
+     * Set operationalTotal
+     *
+     * @param string $operationalTotal
+     * @return Operational
+     */
+    public function setOperationalCategory($operationalCategory)
+    {
+        $this->operationalCategory = $operationalCategory;
+
+        return $this;
+    }
+
+    /**
+     * Get operationalCategory
+     *
+     * @return string 
+     */
+    public function getOperationalCategory()
+    {
+        return $this->operationalCategory;
+    }
+
+    /**
+     * Set operationalMonth
+     *
+     * @param string $operationalTotal
+     * @return Operational
+     */
+    public function setOperationalMonth($operationalMonth)
+    {
+        $this->operationalMonth = $operationalMonth;
+
+        return $this;
+    }
+
+    /**
+     * Get operationalCategory
+     *
+     * @return string 
+     */
+    public function getOperationalMonth()
+    {
+        return $this->operationalMonth;
+    }
+
+    /**
+     * Set operationalTotal
+     *
+     * @param string $operationalTotal
+     * @return Operational
+     */
+    public function setOperationalYear($operationalYear)
+    {
+        $this->operationalYear = $operationalYear;
+
+        return $this;
+    }
+
+    /**
+     * Get operationalCategory
+     *
+     * @return string 
+     */
+    public function getOperationalYear()
+    {
+        return $this->operationalYear;
     }
 }

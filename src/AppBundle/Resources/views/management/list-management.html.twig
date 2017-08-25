@@ -1,0 +1,124 @@
+{% extends 'subLayout.html.twig' %}
+{% block title %}List Data Laporan Manajemen{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            <center>Data Laporan Manajemen DILo Malang</center>
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Bulan</th>
+                                    <th>Tahun</th>
+                                    <th>Membership (Orang)</th>
+                                    <th>Pengunjung (Orang)</th>
+                                    <th>FB (Akun)</th>
+                                    <th>Twitter (Akun</th>
+                                    <th>Instagram (Akun)</th>
+                                    <th>Startup</th>
+                                    <th>Community</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% if data|length > 0 %}
+                               {% set i = 1 %}
+                                {% for dat in data %}
+                                    <tr>
+                                          <td>{% if dat.manageMonth is defined and not null %}
+                                            {% if dat.manageMonth == 1 %}
+                                                <span>Januari</span>
+                                            {% elseif dat.manageMonth == 2 %}
+                                                <span>Februari</span>
+                                            {% elseif dat.manageMonth == 3 %}
+                                                <span>Maret</span>
+                                            {% elseif dat.manageMonth == 4 %}
+                                                <span>April</span>
+                                            {% elseif dat.manageMonth == 5 %}
+                                                <span>Mei</span>
+                                            {% elseif dat.manageMonth == 6 %}
+                                                <span>Juni</span>
+                                            {% elseif dat.manageMonth == 7 %}
+                                                <span>Juli</span>
+                                            {% elseif dat.manageMonth == 8 %}
+                                                <span>Agustus</span>
+                                            {% elseif dat.manageMonth == 9 %}
+                                                <span>September</span>
+                                            {% elseif dat.manageMonth == 10 %}
+                                                <span>Oktober</span>
+                                            {% elseif dat.manageMonth == 11 %}
+                                                <span>November</span>
+                                            {% elseif dat.manageMonth == 12 %}
+                                                <span>Desember</span>
+                                            {% endif %}
+                                        {% endif %}
+                                        </td>
+
+                                         <td>{% if dat.manageYear is defined and not null %}
+                                            {% if dat.manageYear == 1 %}
+                                                <span>2017</span>
+                                            {% elseif dat.manageYear == 2 %}
+                                                <span>2018</span>
+                                            {% elseif dat.manageYear == 3 %}
+                                                <span>2019</span>
+                                            {% elseif dat.manageYear == 4 %}
+                                                <span>2020</span>
+                                            {% elseif dat.manageYear == 5 %}
+                                                <span>2021</span>
+                                            {% elseif dat.manageYear == 6 %}
+                                                <span>2022</span>
+                                            {% elseif dat.manageYear == 7 %}
+                                                <span>2023</span>
+                                            {% elseif dat.manageYear == 8 %}
+                                                <span>2024</span>
+                                            {% elseif dat.manageYear == 9 %}
+                                                <span>2025</span>
+                                            {% elseif dat.manageYear == 10 %}
+                                                <span>...</span>
+                                            {% endif %}
+                                        {% endif %}
+                                        </td>
+                                        <td>{% if dat.manageDatamember is defined and not null %}{{ dat.manageDatamember }}{% endif %}</td>
+                                        <td>{% if dat.manageDatauser is defined and not null %}{{ dat.manageDataUser }}{% endif %}</td>
+                                        <td>{% if dat.manageDatafb is defined and not null %}{{ dat.manageDatafb }}{% endif %}</td>
+                                        <td>{% if dat.manageDatatwitter is defined and not null %}{{ dat.manageDatatwitter }}{% endif %}</td>
+                                        <td>{% if dat.manageDataig is defined and not null %}{{ dat.manageDataig }}{% endif %}</td>
+                                        <td>{% if dat.manageDatastartup is defined and not null %}{{ dat.manageDatastartup }}{% endif %}</td>
+                                        <td>{% if dat.manageDatacommunity is defined and not null %}{{ dat.manageDatacommunity }}{% endif %}</td>
+
+
+                                        <td>
+
+                                        </td>
+                                    </tr>
+                                    {% set i = i + 1 %}
+                                {% endfor %}
+                            {% else %}
+                                <tr>
+                                    <td colspan="5">Tidak ada data</td>
+                                </tr>
+                            {% endif %}
+                            </tbody>
+                        </table>
+                        
+                        <button type="button" onclick="print('card')" class="btn btn-primary btn-xs" style="position:absolute;right:30px;border-radius: 0;">EXPORT SEMUA DATA PENGUNJUNG</button>
+                </br></br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block customJS %}
+    <script>
+        $('.dataTable').dataTable({
+
+        });
+    </script>
+{% endblock %}

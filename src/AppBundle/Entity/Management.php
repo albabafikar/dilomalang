@@ -14,6 +14,26 @@ class Management
      */
     private $id;
 
+      /**
+     * @var int
+     */
+    private $manageMonth;
+
+      /**
+     * @var int
+     */
+    private $manageYear;
+
+    /**
+     * @var string
+     */
+    private $manageDataMember;
+
+    /**
+     * @var string
+     */
+    private $manageDataUser;
+
     /**
      * @var string
      */
@@ -27,7 +47,17 @@ class Management
     /**
      * @var string
      */
-    private $manageDataregister;
+    private $manageDataig;
+
+    /**
+     * @var string
+     */
+    private $manageDataStartup;
+
+    /**
+     * @var string
+     */
+    private $manageDataCommunity;
 
 
     /**
@@ -87,25 +117,165 @@ class Management
     }
 
     /**
-     * Set manageDataregister
+     * Set manageDataig
      *
-     * @param string $manageDataregister
+     * @param string $manageDataig
      * @return Management
      */
-    public function setManageDataregister($manageDataregister)
+    public function setManageDataig($manageDataig)
     {
-        $this->manageDataregister = $manageDataregister;
+        $this->manageDataig = $manageDataig;
 
         return $this;
     }
 
     /**
-     * Get manageDataregister
+     * Get manageDataig
      *
      * @return string 
      */
-    public function getManageDataregister()
+    public function getManageDataig()
     {
-        return $this->manageDataregister;
+        return $this->manageDataig;
+    }
+
+    /**
+     * Set manageMonth
+     *
+     * @param integer $manageMonth
+     * @return Management
+     */
+    public function setManageMonth($manageMonth)
+    {
+        $this->manageMonth = $manageMonth;
+
+        return $this;
+    }
+
+    /**
+     * Get manageMonth
+     *
+     * @return int 
+     */
+    public function getManageMonth()
+    {
+        return $this->manageMonth;
+    }
+
+    
+    /**
+     * Set manageYear
+     *
+     * @param integer $manageYear
+     * @return Management
+     */
+    public function setManageYear($manageYear)
+    {
+        $this->manageYear = $manageYear;
+
+        return $this;
+    }
+
+    /**
+     * Get manageYear
+     *
+     * @return string 
+     */
+    public function getManageYear()
+    {
+        return $this->manageYear;
+    }
+
+
+    /**
+     * Set manageDataMember
+     *
+     * @param string $manageDataMember
+     * @return Management
+     */
+    public function setManageDataMember($manageDataMember)
+    {
+        $this->manageDataMember = $manageDataMember;
+
+        return $this;
+    }
+
+    /**
+     * Get manageDataMember
+     *
+     * @return string 
+     */
+    public function getManageDataMember()
+    {
+        return $this->manageDataMember;
+    }
+
+    /**
+     * Set manageDataUser
+     *
+     * @param string $manageDataUser
+     * @return Management
+     */
+    public function setManageDataUser($manageDataUser)
+    {
+        $this->manageDataUser = $manageDataUser;
+
+        return $this;
+    }
+
+    /**
+     * Get manageDataUser
+     *
+     * @return string 
+     */
+    public function getManageDataUser()
+    {
+        return $this->manageDataUser;
+    }
+
+    /**
+     * Set manageDataStartup
+     *
+     * @param string $manageDataStartup
+     * @return Management
+     */
+    public function setManageDataStartup($manageDataStartup)
+    {
+        $this->manageDataStartup = $manageDataStartup;
+
+        return $this;
+    }
+
+    /**
+     * Get manageDataStartup
+     *
+     * @return string 
+     */
+    public function getManageDataStartup()
+    {
+        return $this->manageDataStartup;
+    }
+
+/**
+     * Set manageDataCommunity
+     *
+     * @param string $manageDataCommunity
+     * @return Management
+     */
+    public function setManageDataCommunity($manageDataCommunity)
+    {
+        $this->manageDataCommunity = $manageDataCommunity;
+
+        return $this;
+    }
+
+    /**
+     * Get manageDataCommunity
+     *
+     * @return string 
+     */
+    public function getManageDataCommunity()
+    {
+        return $this->manageDataCommunity;
     }
 }

@@ -1,0 +1,103 @@
+{% extends 'subLayout.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            <center>Input Data Manajemen</center>
+                        </h2>
+                    </div>
+                    <div class="body">
+                    <form method="post">
+                             <div class="form-group">
+                                <p>Bulan</p>
+                                <div class="form-line">
+                                    <select name="month" id="" class="form-control">
+                                    <option value="">-- Pilih Bulan Pengerjaan --</option>
+                                    <option value="1">Januari</option>
+                                    <option value="2">Februari</option>
+                                    <option value="3">Maret</option>
+                                    <option value="4">April</option>
+                                    <option value="5">Mei</option>
+                                    <option value="6">Juni</option>
+                                    <option value="7">Juli</option>
+                                    <option value="8">Agustus</option>
+                                    <option value="9">September</option>
+                                    <option value="10">Oktober</option>
+                                    <option value="11">November</option>
+                                    <option value="12">Desember</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Tahun</p>
+                                <div class="form-line">
+                                    <select name="manage_year" id="" class="form-control">
+                                    <option value="">-- Pilih Tahun Pengerjaan --</option>
+                                    <option value="1">2017</option>
+                                    <option value="2">2018</option>
+                                    <option value="3">2019</option>
+                                    <option value="4">2020</option>
+                                    <option value="5">2021</option>
+                                    <option value="6">2022</option>
+                                    <option value="7">2023</option>
+                                    <option value="8">2024</option>
+                                    <option value="9">2025</option>
+                                    <option value="10">...</option>
+                                </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <p>Jumlah Member Terdaftar </p>
+                                <div class="form-line">
+                                    <input type="text" name="manage_datamember" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Jumlah Pengunjung Bulanan</p>
+                                <div class="form-line">
+                                    <input type="text" name="manage_datauser" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Jumlah Like / Follower Facebook</p>
+                                 <div class="form-line">
+                                <input type="text" name="manage_datafb" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Jumlah Like / Follower Twitter</p>
+                                 <div class="form-line">
+                                <input type="text" name="manage_datatwitter" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Jumlah Like / Follower Instagram</p>
+                                 <div class="form-line">
+                                <input type="text" name="manage_dataig" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Jumlah Startup Aktif</p>
+                                 <div class="form-line">
+                                <input type="text" name="manage_datastartup" class="form-control">
+                                </div>
+                            </div><div class="form-group">
+                                <p>Jumlah Komunitas Aktif</p>
+                                 <div class="form-line">
+                                <input type="text" name="manage_datacommunity" class="form-control">
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary waves-effect">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

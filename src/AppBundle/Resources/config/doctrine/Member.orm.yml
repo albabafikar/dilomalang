@@ -32,6 +32,10 @@ AppBundle\Entity\Member:
             length: 255
             column: member_email
         memberDate:
-            type: datetime
+            type: date
             column: member_date
+        memberPhone:
+            type: string
+            length: 20
+            column: member_phone
     lifecycleCallbacks: {  }

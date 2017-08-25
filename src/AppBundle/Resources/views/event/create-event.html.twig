@@ -7,11 +7,24 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            <center>Input Event</center>
+                            <center>Input Pengajuan Kegiatan</center>
                         </h2>
                     </div>
                     <div class="body">
-                        <form method="post" enctype="multipart/form-data">
+                    <form method="post" enctype="multipart/form-data">
+                    
+                            <div class="form-group">
+                                <p>Kategori Event</p>
+                                <select name="event_category" id="" class="form-control">
+                                    <option value="">-- Pilih Event Category</option>
+                                    <option value="1">Workshop Teknis</option>
+                                    <option value="2">Workshop Desain</option>
+                                    <option value="3">Workshop Manajemen</option>
+                                    <option value="4">Business Gathering</option>
+                                    <option value="5">Kompetisi Lokal</option>
+                                    <option value="6">Dilo on Campus</option>
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <p>Nama Event</p>
                                 <div class="form-line">
@@ -25,19 +38,19 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <p>Topic Event</p>
+                                <p>Topik Event</p>
                                 <div class="form-line">
-                                    <textarea name="event_topic" class="form-control" id="" cols="30" rows="10"></textarea>
+                                    <input type="text" name="event_topic" id="" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <p>Nama Mentor</p>
+                                <p>Nama Narasumber</p>
                                 <div class="form-line">
                                     <input type="text" name="event_mentor" id="" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <p>Pekerjaan Mentor Event</p>
+                                <p>Pekerjaan Narasumber</p>
                                 <div class="form-line">
                                     <input type="text" name="mentor_job" id="" class="form-control">
                                 </div>
@@ -49,39 +62,18 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <p>Event Participant</p>
+                                <p>Target Peserta</p>
                                 <div class="form-line">
                                     <input type="text" name="event_participant" id="" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <p>Detail Event</p>
+                                <p>Keterangan Event</p>
                                 <div class="form-line">
-                                    <textarea name="event_detail" class="form-control" id="" cols="30" rows="10"></textarea>
+                                    <input type="text" name="event_detail" id="" class="form-control">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <p>Event Price</p>
-                                <div class="form-line">
-                                    <input type="text" name="event_price" id="" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <p>Event Category</p>
-                                <select name="event_category" id="" class="form-control">
-                                    <option value="">-- Pilih Event Category</option>
-                                    <option value="1">Workshop Teknis</option>
-                                    <option value="2">Wokshop Desain</option>
-                                    <option value="3">Workshop Manajemen</option>
-                                    <option value="4">Business Gathering</option>
-                                    <option value="5">Kompetisi Lokal</option>
-                                    <option value="6">Dilo on Campus</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <p>Masukkan Foto Event</p>
-                                <input type="file" accept="image/*" name="event_photo" id="" class="form-control">
-                            </div>
+
                             <button class="btn btn-primary waves-effect">SUBMIT</button>
                         </form>
                     </div>

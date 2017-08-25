@@ -1,0 +1,82 @@
+{% extends 'subLayout.html.twig' %}
+
+{% block content %}         
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+        <div class="body">
+
+
+            <h3>
+     {% if event.eventCategory is defined and not null %}
+        {% if event.eventCategory == 1 %}
+            Workshop Teknis
+        {% elseif event.eventCategory == 2 %}
+            Workshop Desain
+        {% elseif event.eventCategory == 3 %}
+            Workshop Manajemen
+        {% elseif event.eventCategory == 4 %}
+            Business Gathering
+        {% elseif event.eventCategory == 5 %}
+            Kompetisi Lokal
+        {% else %}
+            DILo on Campus
+        {% endif %}
+     {% endif %}
+                                          
+    </h3> 
+    <h3>{{ event.eventName }}</h3>
+
+                <button type="button" onclick="print('printed-area')" class="btn btn-primary btn-xs" style="position:absolute;right:30px;border-radius: 0;"> CETAK</button>
+    
+                <div id="printed-area">
+                        <table class="table table no-border table-striped table-hover dataTable js-exportable">
+                            <thead>
+                            <tr>
+                                <th width="200">&nbsp;</th> {# Label #}
+                                <th width="10">&nbsp;</th> {# TitikDua #}
+                                <th width="">&nbsp;</th> {# Label #}
+                                <th width="10">&nbsp;</th> {# TitikDua #}
+                                <th width="200">&nbsp;</th> {# IsiAlamat #}
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="fw-bold">Tanggal Event</td>
+                                <td colspan="6"> : &nbsp;  {% if event.eventDate is defined and not null %}{{ event.eventDate|date('j F Y') }}{% endif %}</td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Nama Narasumber </td>
+                                <td colspan="6"> : &nbsp; {% if event.eventMentor is defined %}{{ event.eventMentor }}{% else %}-{% endif %}</td>
+                            </tr> 
+                            <tr>
+                                <td class="fw-bold">Topik Pembahasan </td>
+                                <td colspan="6"> : &nbsp; {% if event.eventTopic is defined %}{{ event.eventTopic }}{% else %}-{% endif %}</td>
+                            </tr> 
+                            <tr>
+                                <td class="fw-bold">Waktu Pelaksanan </td>
+                                <td colspan="6"> : &nbsp;   {% if event.eventTime is defined %}{{ event.eventTime|date('H:i') }}{% else %}-{% endif %}</td>
+                           
+                           
+                            </tr> 
+                            <tr>
+                                <td class="fw-bold">Peserta </td>
+                                <td colspan="6"> : &nbsp; {% if event.eventMember is defined %}{{ event.eventMember }}{% else %}-{% endif %}</td>
+                            </tr> 
+                            <tr>
+                                <td class="fw-bold">Detail Kegiatan </td>
+                                <td colspan="6"> : &nbsp; {% if event.eventDetail is defined %}{{ event.eventDetail }}{% else %}-{% endif %}</td>
+                            </tr> 
+
+                             
+
+                            </tbody>
+                        </table>
+                    </div>
+        </div>
+    </div>
+</div>
+     
+
+                   
+{% endblock %}

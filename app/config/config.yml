@@ -11,6 +11,12 @@ parameters:
     event_directory:
         resource: './uploads/images/event'
 
+    report_directory:
+        resource: './uploads/images/report'   
+
+    ro_directory:
+        resource: './uploads/images/notereport' 
+
 framework:
     #esi: ~
     #translator: { fallbacks: ['%locale%'] }

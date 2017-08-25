@@ -1,0 +1,74 @@
+{% extends 'subLayout.html.twig' %}
+{% block title %}Update Data Laporan Manajemen{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            <center></center>
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <form method="post">
+                            <div class="form-group">
+                                <p>Nama Member</p>
+                                <div class="form-line">
+                                    <input type="text" name="member_name" class="form-control" value="{% if data.memberName is defined and not null %}{{ data.memberName }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Aktivitas Member</p>
+                                <div class="form-line">
+                                    <input type="text" name="member_activity" class="form-control" value="{% if data.memberActivity is defined and not null %}{{ data.memberActivity }}{% endif %}" >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Jumlah Member</p>
+                                <div class="form-line">
+                                    <input type="text" name="member_total" class="form-control" value="{% if data.memberTotal is defined and not null %}{{ data.memberTotal }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Jenis Kelamin</p>
+                                <select name="member_genre" id="" class="form-control">
+                                    <option value="">-- Pilih Jenis Kelamin --</option>
+                                    <option value="1" {% if data.memberGenre is defined and not null %}{% if data.memberGenre == 1 %}selected{% endif %}{% endif %}>Laki-laki</option>
+                                    <option value="2" {% if data.memberGenre is defined and not null %}{% if data.memberGenre == 2 %}selected{% endif %}{% endif %}>Perempuan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <p>Pilih Status</p>
+                                <select name="member_status" id="" class="form-control">
+                                    <option value="">-- Pilih Status Member --</option>
+                                    <option value="1" {% if data.memberStatus is defined and not null %}{% if data.memberStatus == 1 %}selected{% endif %}{% endif %}>Mahasiswa</option>
+                                    <option value="2" {% if data.memberStatus is defined and not null %}{% if data.memberStatus == 2 %}selected{% endif %}{% endif %}>Umum</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <p>Email Member</p>
+                                <div class="form-line">
+                                    <input type="email" name="member_email" id="" class="form-control" value="{% if data.memberEmail is defined and not null %}{{ data.memberEmail }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Member Date</p>
+                                <div class="form-line">
+                                    <input type="text" name="member_date" id="" class="datepicker form-control" value="{% if data.memberDate is defined and not null %}{{ data.memberDate|date('d m Y') }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>No. HP / WA</p>
+                                <div class="form-line">
+                                    <input type="numeric" name="member_phone" id="" class="form-control" value="{% if data.memberPhone is defined and not null %}{{ data.memberPhone }}{% endif %}">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary waves-effect">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

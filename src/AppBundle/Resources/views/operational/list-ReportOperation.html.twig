@@ -1,0 +1,127 @@
+{% extends 'subLayout.html.twig' %}
+
+{% block title %}Laporan Operasional{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            <center>Daftar Laporan Operasional</center>
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Nama Item</th>
+                                    <th>Bulan</th>
+                                    <th>Tahun</th>
+                                    <th>Kuantitas (qty)</th>
+                                    <th>Harga Satuan (Rp)</th>
+                                    <th>Kategori</th>                                        
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% if data|length > 0 %}
+                               {% set i = 1 %}
+                                {% for dat in data %}
+                                    <tr>
+                                        <td>{% if dat.RoName is defined and not null %}{{ dat.RoName }}{% endif %}</td>
+                                         <td>{% if dat.RoMonth is defined and not null %}
+                                            {% if dat.RoMonth == 1 %}
+                                                <span>Januari</span>
+                                            {% elseif dat.RoMonth == 2 %}
+                                                <span>Februari</span>
+                                            {% elseif dat.RoMonth == 3 %}
+                                                <span>Maret</span>
+                                            {% elseif dat.RoMonth == 4 %}
+                                                <span>April</span>
+                                            {% elseif dat.RoMonth == 5 %}
+                                                <span>Mei</span>
+                                            {% elseif dat.RoMonth == 6 %}
+                                                <span>Juni</span>
+                                            {% elseif dat.RoMonth == 7 %}
+                                                <span>Juli</span>
+                                            {% elseif dat.RoMonth == 8 %}
+                                                <span>Agustus</span>
+                                            {% elseif dat.RoMonth == 9 %}
+                                                <span>September</span>
+                                            {% elseif dat.RoMonth == 10 %}
+                                                <span>Oktober</span>
+                                            {% elseif dat.RoMonth == 11 %}
+                                                <span>November</span>
+                                            {% elseif dat.RoMonth == 12 %}
+                                                <span>Desember</span>
+                                            {% endif %}
+                                        {% endif %}
+                                        </td>
+                                         <td>{% if dat.RoYear is defined and not null %}
+                                            {% if dat.RoYear == 1 %}
+                                                <span>2017</span>
+                                            {% elseif dat.RoYear == 2 %}
+                                                <span>2018</span>
+                                            {% elseif dat.RoYear == 3 %}
+                                                <span>2019</span>
+                                            {% elseif dat.RoYear == 4 %}
+                                                <span>2020</span>
+                                            {% elseif dat.RoYear == 5 %}
+                                                <span>2021</span>
+                                            {% elseif dat.RoYear == 6 %}
+                                                <span>2022</span>
+                                            {% elseif dat.RoYear == 7 %}
+                                                <span>2023</span>
+                                            {% elseif dat.RoYear == 8 %}
+                                                <span>2024</span>
+                                            {% elseif dat.RoYear == 9 %}
+                                                <span>2025</span>
+                                            {% elseif dat.RoYear == 10 %}
+                                                <span>...</span>
+                                            {% endif %}
+                                        {% endif %}
+                                        </td>
+                                        
+                                        <td>{% if dat.RoQty is defined and not null %}{{ dat.RoQty }}{% endif %}</td>
+                                        <td>{% if dat.RoUnitprice is defined and not null %}{{ dat.RoUnitprice }}{% endif %}</td>
+                                        <td>{% if dat.RoStatus is defined and not null %}
+                                        {% if dat.RoStatus == 1 %}
+                                                <span>Operasional</span>
+                                            {% elseif dat.RoStatus == 2 %}
+                                                <span>Kegiatan</span>
+                                            {% elseif dat.RoStatus == 3 %}
+                                                <span>Gaji</span>
+                                            {% elseif dat.RoStatus == 4 %}
+                                                <span>Pengadaan ATK</span>
+                                            {% elseif dat.RoStatus == 5 %}
+                                                <span>Refreshment</span>
+                                            {% endif %}
+                                       {% endif %}     
+                                       <td>
+                                        <a href="{{ path('app_reportoperation_update',{id: dat.id}) }}" class="btn btn-primary btn-xs">UPDATE</a>
+                                        <a href="{{ path('app_reportoperation_delete',{id: dat.id}) }}" class="btn btn-danger btn-xs">DELETE</a>
+                                        <a href="{{ path('app_reportoperation_view',{id: dat.id}) }}" class="btn btn-green btn-xs"> VIEW </a>
+                                        
+                                    </td>
+                                    </tr>
+                                    {% set i = i + 1 %}
+                                {% endfor %}
+                          
+                            {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block customJS %}
+    <script>
+        $('.dataTable').dataTable({
+
+        });
+    </script>
+{% endblock %}

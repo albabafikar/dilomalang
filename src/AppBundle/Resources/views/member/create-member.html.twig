@@ -7,25 +7,31 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            <center>Input Data Member</center>
+                            <center>Input Data Pengunjung</center>
                         </h2>
                     </div>
                     <div class="body">
                         <form method="post">
+                             <div class="form-group">
+                                <p>Tanggal Kehadiran</p>
+                                <div class="form-line">
+                                    <input type="text" name="member_date" id="" class="datepicker form-control">
+                                </div>
+                            </div>
                             <div class="form-group">
-                                <p>Nama Member</p>
+                                <p>Nama Startup / Instansi / Member</p>
                                 <div class="form-line">
                                     <input type="text" name="member_name" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <p>Aktivitas Member</p>
+                                <p>Aktivitas yang dilakukan</p>
                                 <div class="form-line">
                                     <input type="text" name="member_activity" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <p>Jumlah Member</p>
+                                <p>Jumlah Pengunjung</p>
                                 <div class="form-line">
                                     <input type="text" name="member_total" class="form-control">
                                 </div>
@@ -42,20 +48,24 @@
                                 <p>Pilih Status</p>
                                 <select name="member_status" id="" class="form-control">
                                     <option value="">-- Pilih Status Member --</option>
-                                    <option value="1">Mahasiswa</option>
+                                    <option value="1">Pelajar / Mahasiswa</option>
                                     <option value="2">Umum</option>
+                                    <option value="3">Wiraswasta</option>
+                                    <option value="4">Pegawai Swasta</option>
+                                    <option value="5">Pegawai Negeri</option>
+                                    
                                 </select>
                             </div>
                             <div class="form-group">
-                                <p>Email Member</p>
+                                <p>Email</p>
                                 <div class="form-line">
                                     <input type="email" name="member_email" id="" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <p>Member Date</p>
+                                <p>No. Handphone</p>
                                 <div class="form-line">
-                                    <input type="text" name="member_date" id="" class="datepicker form-control">
+                                    <input type="numeric" name="member_phone" id="" class="form-control">
                                 </div>
                             </div>
                             <button class="btn btn-primary waves-effect">SUBMIT</button>

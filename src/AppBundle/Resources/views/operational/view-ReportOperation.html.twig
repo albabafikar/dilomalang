@@ -1,0 +1,130 @@
+{% extends 'subLayout.html.twig' %}
+
+{% block content %}         
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+        <div class="body">
+        
+    <h3>
+    LAPORAN OPERASIONAL DILo MALANG         
+    </h3> 
+
+                   <button type="button" onclick="print('printed-area')" class="btn btn-primary btn-xs" style="position:absolute;right:30px;border-radius: 0;"> CETAK</button>
+    
+                <div id="printed-area">
+                       <table class="table table no-border table-striped table-hover dataTable js-exportable">
+                            <thead>
+                            <tr>
+                                <th width="200">&nbsp;</th> {# Label #}
+                                <th width="10">&nbsp;</th> {# TitikDua #}
+                                <th width="">&nbsp;</th> {# Label #}
+                                <th width="10">&nbsp;</th> {# TitikDua #}
+                                <th width="200">&nbsp;</th> {# IsiAlamat #}
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="fw-bold">Kategori</td>
+                                <td colspan="6"> : &nbsp;   {% if reportoperation.RoStatus == 1 %}
+                                                <span>Operasional</span>
+                                            {% elseif reportoperation.RoStatus == 2 %}
+                                                <span>Kegiatan</span>
+                                            {% elseif reportoperation.RoStatus == 3 %}
+                                                <span>Gaji</span>
+                                            {% elseif reportoperation.RoStatus == 4 %}
+                                                <span>Pengadaan ATK</span>
+                                            {% elseif reportoperation.RoStatus == 5 %}
+                                                <span>Refreshment</span>
+                                            {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Nama Item </td>
+                                <td colspan="6"> : &nbsp; {% if reportoperation.RoName is defined %}{{ reportoperation.RoName }}{% else %}-{% endif %}</td>
+                            </tr> 
+                            <tr>
+                                <td class="fw-bold">Bulan Pelaksanaan</td>
+                                <td colspan="6"> : &nbsp; {% if reportoperation.RoMonth is defined and not null %}
+                                            {% if reportoperation.RoMonth == 1 %}
+                                                <span>Januari</span>
+                                            {% elseif reportoperation.RoMonth == 2 %}
+                                                <span>Februari</span>
+                                            {% elseif reportoperation.RoMonth == 3 %}
+                                                <span>Maret</span>
+                                            {% elseif reportoperation.RoMonth == 4 %}
+                                                <span>April</span>
+                                            {% elseif reportoperation.RoMonth == 5 %}
+                                                <span>Mei</span>
+                                            {% elseif reportoperation.RoMonth == 6 %}
+                                                <span>Juni</span>
+                                            {% elseif reportoperation.RoMonth == 7 %}
+                                                <span>Juli</span>
+                                            {% elseif reportoperation.RoMonth == 8 %}
+                                                <span>Agustus</span>
+                                            {% elseif reportoperation.RoMonth == 9 %}
+                                                <span>September</span>
+                                            {% elseif reportoperation.RoMonth == 10 %}
+                                                <span>Oktober</span>
+                                            {% elseif reportoperation.RoMonth == 11 %}
+                                                <span>November</span>
+                                            {% elseif reportoperation.RoMonth == 12 %}
+                                                <span>Desember</span>
+                                            {% endif %}
+                                            {% endif %}
+                                            </td>
+                            </tr> 
+                             <tr>
+                                <td class="fw-bold">Tahun </td>
+                                <td colspan="6"> : &nbsp; {% if reportoperation.RoYear is defined and not null %}
+                                            {% if reportoperation.RoYear == 1 %}
+                                                <span>2017</span>
+                                            {% elseif reportoperation.RoYear == 2 %}
+                                                <span>2018</span>
+                                            {% elseif reportoperation.RoYear == 3 %}
+                                                <span>2019</span>
+                                            {% elseif reportoperation.RoYear == 4 %}
+                                                <span>2020</span>
+                                            {% elseif reportoperation.RoYear == 5 %}
+                                                <span>2021</span>
+                                            {% elseif reportoperation.RoYear == 6 %}
+                                                <span>2022</span>
+                                            {% elseif reportoperation.RoYear == 7 %}
+                                                <span>2023</span>
+                                            {% elseif reportoperation.RoYear == 8 %}
+                                                <span>2024</span>
+                                            {% elseif reportoperation.RoYear == 9 %}
+                                                <span>2025</span>
+                                            {% elseif reportoperation.RoYear == 10 %}
+                                                <span>...</span>
+                                            {% endif %}
+                                        {% endif %}</td>
+                            </tr> 
+                            <tr>
+                                <td class="fw-bold">Jumlah Barang </td>
+                                <td colspan="6"> : &nbsp; {% if reportoperation.RoQty is defined %}{{ reportoperation.RoQty }}{% else %}-{% endif %}</td>
+                            </tr> 
+                            <tr>
+                                <td class="fw-bold">Harga Satuan </td>
+                                <td colspan="6"> : &nbsp; {% if reportoperation.RoUnitprice is defined %}{{ reportoperation.RoUnitprice }}{% else %}-{% endif %}</td>
+                            </tr> 
+                            <tr>
+                                <td class="fw-bold">Tanggal Nota </td>
+                                <td colspan="6"> : &nbsp; {% if reportoperation.RoDate is defined %}{{ reportoperation.RoDate|date('j F Y') }}{% else %}-{% endif %}</td>
+                            </tr> 
+                             <tr>
+                                <td class="fw-bold">Bukti Nota </td>
+                                <td colspan="6"> : &nbsp; {% if reportoperation.RoNote is defined %} <img src="{{ asset('uploads') }}/images/notereport/{{ reportoperation.RoNote }}" alt=""> {% else %}-{% endif %}</td>
+                            </tr> 
+                             
+
+                            </tbody>
+                        </table>
+                    </div>
+        </div>
+    </div>
+</div>
+     
+
+                   
+{% endblock %}

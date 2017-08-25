@@ -1,0 +1,131 @@
+{% extends 'subLayout.html.twig' %}
+
+{% block title %}Pengajuan Operasional{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            <center>Daftar Pengajuan Operasional</center>
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Kategori</th>
+                                    <th>Bulan</th>
+                                    <th>Tahun</th>
+                                    <th>Item Pengajuan</th>
+                                    <th>Kuantitas (qty)</th>
+                                    <th>Harga Satuan (Rp)</th>
+                                    <th>Total</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% if data|length > 0 %}
+                               {% set i = 1 %}
+                                {% for dat in data %}
+                                    <tr>
+                                        <td>{% if dat.operationalCategory is defined and not null %}
+                                            {% if dat.operationalCategory == 1 %}
+                                                <span class="label label-success">Operasional</span>
+                                            {% elseif dat.operationalCategory == 2 %}
+                                                <span class="label label-success">Kegiatan</span>
+                                            {% elseif dat.operationalCategory == 3 %}
+                                                <span class="label label-success">Gaji</span>
+                                            {% elseif dat.operationalCategory == 4 %}
+                                                <span class="label label-success">Pengadaan ATK</span>
+                                            {% elseif dat.operationalCategory == 5 %}
+                                                <span class="label label-success">Refreshment</span>
+                                            {% endif %}
+                                        {% endif %}
+                                        </td>
+                                         <td>{% if dat.operationalMonth is defined and not null %}
+                                            {% if dat.operationalMonth == 1 %}
+                                                <span>Januari</span>
+                                            {% elseif dat.operationalMonth == 2 %}
+                                                <span>Februari</span>
+                                            {% elseif dat.operationalMonth == 3 %}
+                                                <span>Maret</span>
+                                            {% elseif dat.operationalMonth == 4 %}
+                                                <span>April</span>
+                                            {% elseif dat.operationalMonth == 5 %}
+                                                <span>Mei</span>
+                                            {% elseif dat.operationalMonth == 6 %}
+                                                <span>Juni</span>
+                                            {% elseif dat.operationalMonth == 7 %}
+                                                <span>Juli</span>
+                                            {% elseif dat.operationalMonth == 8 %}
+                                                <span>Agustus</span>
+                                            {% elseif dat.operationalMonth == 9 %}
+                                                <span>September</span>
+                                            {% elseif dat.operationalMonth == 10 %}
+                                                <span>Oktober</span>
+                                            {% elseif dat.operationalMonth == 11 %}
+                                                <span>November</span>
+                                            {% elseif dat.operationalMonth == 12 %}
+                                                <span>Desember</span>
+                                            {% endif %}
+                                        {% endif %}
+                                        </td>
+                                         <td>{% if dat.operationalYear is defined and not null %}
+                                            {% if dat.operationalYear == 1 %}
+                                                <span>2017</span>
+                                            {% elseif dat.operationalYear == 2 %}
+                                                <span>2018</span>
+                                            {% elseif dat.operationalYear == 3 %}
+                                                <span>2019</span>
+                                            {% elseif dat.operationalYear == 4 %}
+                                                <span>2020</span>
+                                            {% elseif dat.operationalYear == 5 %}
+                                                <span>2021</span>
+                                            {% elseif dat.operationalYear == 6 %}
+                                                <span>2022</span>
+                                            {% elseif dat.operationalYear == 7 %}
+                                                <span>2023</span>
+                                            {% elseif dat.operationalYear == 8 %}
+                                                <span>2024</span>
+                                            {% elseif dat.operationalYear == 9 %}
+                                                <span>2025</span>
+                                            {% elseif dat.operationalYear == 10 %}
+                                                <span>...</span>
+                                            {% endif %}
+                                        {% endif %}
+                                        </td>
+                                        <td>{% if dat.operationalName is defined and not null %}{{ dat.operationalName }}{% endif %}</td>
+                                        <td>{% if dat.operationalQty is defined and not null %}{{ dat.operationalQty }}{% endif %}</td>
+                                        <td>{% if dat.operationalUnitprice is defined and not null %}{{ dat.operationalUnitprice }}{% endif %}</td>
+                                        <td>{% if dat.operationalTotal is defined and not null %}{{ dat.operationalTotal }}{% endif %}</td>
+                                        <td>
+                                            <a href="{{ path('app_operational_update',{id: dat.id}) }}" class="btn btn-primary btn-xs">UPDATE</a>
+                                            <a href="{{ path('app_operational_delete',{id: dat.id}) }}" class="btn btn-danger btn-xs">DELETE</a>
+                                        </td>
+                                    </tr>
+
+                                
+                                    {% set i = i + 1 %}
+                                {% endfor %}
+                          
+                            {% endif %}
+                            </tbody>
+                        </table>
+                         <button type="button" onclick="print('card')" class="btn btn-green waves-effect" style="position:absolute;right:30px;border-radius: 0;">CETAK LIST LAPORAN</button>
+                   </br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block customJS %}
+    <script>
+        $('.dataTable').dataTable({
+
+        });
+    </script>
+{% endblock %}

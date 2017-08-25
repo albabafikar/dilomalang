@@ -19,8 +19,9 @@
                                     <th>No.</th>
                                     <th>Tanggal</th>
                                     <th>Nama</th>
-                                    <th>Jumlah Orang</th>
+                                    <th>Jumlah</th>
                                     <th>Email</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -34,6 +35,20 @@
                                         <td>{% if dat.memberName is defined and not null %}{{ dat.memberName }}{% endif %}</td>
                                         <td>{% if dat.memberTotal is defined and not null %}{{ dat.memberTotal }}{% endif %}</td>
                                         <td>{% if dat.memberEmail is defined and not null %}{{ dat.memberEmail }}{% endif %}</td>
+                                         <td>{% if dat.memberStatus is defined and not null %}
+                                            {% if dat.memberStatus == 1 %}
+                                                <span class="label label-success">Pelajar</span>
+                                            {% elseif dat.memberStatus == 2 %}
+                                                <span class="label label-success">Umum</span>
+                                            {% elseif dat.memberStatus == 3 %}
+                                                <span class="label label-success">Wiraswasta</span>
+                                            {% elseif dat.memberStatus == 4 %}
+                                                <span class="label label-success">Pegawai Swasta</span>
+                                            {% elseif dat.memberStatus == 5 %}
+                                                <span class="label label-success">Pegawai Negeri</span>
+                                            {% endif %}
+                                        {% endif %}
+                                        </td>
                                         <td>
                                             <a href="{{ path('app_member_update',{id: dat.id}) }}" class="btn btn-primary btn-xs">UPDATE</a>
                                             <a href="{{ path('app_member_delete',{id: dat.id}) }}" class="btn btn-danger btn-xs">DELETE</a>
@@ -48,6 +63,9 @@
                             {% endif %}
                             </tbody>
                         </table>
+                        
+                        <button type="button" onclick="print('card')" class="btn btn-primary btn-xs" style="position:absolute;right:30px;border-radius: 0;">EXPORT SEMUA DATA PENGUNJUNG</button>
+                </br></br>
                     </div>
                 </div>
             </div>

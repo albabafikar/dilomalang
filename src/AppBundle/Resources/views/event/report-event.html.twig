@@ -1,0 +1,99 @@
+{% extends 'subLayout.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            <center>Input Laporan Kegiatan</center>
+                        </h2>
+                    </div>
+                    <div class="body">
+                    <form method="post" enctype="multipart/form-data">
+                    
+                            <div class="form-group">
+                                <p>Kategori Event</p>
+                                <select name="report_category" id="" class="form-control">
+                                    <option value="">-- Pilih Event Category</option>
+                                    <option value="1">Workshop Teknis</option>
+                                    <option value="2">Wokshop Desain</option>
+                                    <option value="3">Workshop Manajemen</option>
+                                    <option value="4">Business Gathering</option>
+                                    <option value="5">Kompetisi Lokal</option>
+                                    <option value="6">Dilo on Campus</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <p>Nama Event</p>
+                                <div class="form-line">
+                                    <input type="text" name="report_title" id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Topik Event</p>
+                                <div class="form-line">
+                                    <input type="text" name="report_topic" id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Tanggal Event</p>
+                                <div class="form-line">
+                                    <input type="text" name="report_date" id="" class="datepicker form-control">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <p>Nama Narasumber</p>
+                                <div class="form-line">
+                                    <input type="text" name="report_mentor" id="" class="form-control">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <p>Waktu Event</p>
+                                <div class="form-line">
+                                    <input type="text" name="report_time" id="timepicker" class="form-control" value="{% if report is defined %}{{ report.reportTime|date('H:i') }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Target Peserta</p>
+                                <div class="form-line">
+                                    <input type="text" name="report_member" id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Detail Kegiatan</p>
+                                <div class="form-line">
+                                   <textarea name="report_detail" id="" cols="30" rows="10" class="form-control"></textarea>
+                                </div>
+                            </div>
+                           
+                            <div class="form-group">
+                                <p>Masukkan Foto Event</p>
+                                <input type="file" accept="image/*" name="report_photo" id="" class="form-control">
+                            </div>
+
+                           
+                            <button class="btn btn-primary waves-effect">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block customJS %}
+    <script>
+        $('.datepicker').bootstrapMaterialDatePicker({
+            time: false
+        });
+
+        $('#timepicker').bootstrapMaterialDatePicker({
+            format: 'HH:mm',
+            clearButton: true,
+            date: false
+        });
+    </script>
+{% endblock %}

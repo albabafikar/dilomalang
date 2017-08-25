@@ -58,6 +58,12 @@
                                     <input type="text" name="member_date" id="" class="datepicker form-control" value="{% if data.memberDate is defined and not null %}{{ data.memberDate|date('d m Y') }}{% endif %}">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <p>No. HP / WA</p>
+                                <div class="form-line">
+                                    <input type="numeric" name="member_phone" id="" class="form-control" value="{% if data.memberPhone is defined and not null %}{{ data.memberPhone }}{% endif %}">
+                                </div>
+                            </div>
                             <button class="btn btn-primary waves-effect">SUBMIT</button>
                         </form>
                     </div>

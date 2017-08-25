@@ -1,0 +1,56 @@
+AppBundle\Entity\ReportOperation:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ReportOperationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        roName:
+            type: string
+            length: 255
+            nullable: true
+            column: ro_name
+        roMonth:
+            type: string
+            length: 255
+            nullable: true
+            column: ro_month
+        roYear:
+            type: string
+            length: 255
+            nullable: true
+            column: ro_year
+        roQty:
+            type: string
+            length: 255
+            nullable: true
+            column: ro_qty
+        roUnitprice:
+            type: string
+            length: 255
+            nullable: true
+            column: ro_unitprice
+        roFile:
+            type: string
+            length: 255
+            nullable: true
+            column: ro_file
+        roStatus:
+            type: string
+            length: 255
+            nullable: true
+            column: ro_status
+        roDate:
+            type: date
+            nullable: true
+            column: ro_date
+        roNote:
+            type: string
+            length: 255
+            nullable: true
+            column: ro_note
+    lifecycleCallbacks: {  }

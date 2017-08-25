@@ -1,0 +1,61 @@
+AppBundle\Entity\Report:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ReportRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        reportCategory:
+            type: string
+            length: 255
+            nullable: true
+            column: report_category
+        reportTitle:
+            type: string
+            length: 255
+            nullable: true
+            column: report_title
+        reportDate:
+            type: datetime
+            nullable: true
+            column: report_date
+        reportTime:
+            type: string
+            length: 255
+            nullable: true
+            column: report_time
+        reportMember:
+            type: string
+            length: 255
+            nullable: true
+            column: report_member
+        reportTopic:
+            type: string
+            length: 255
+            nullable: true
+            column: report_topic
+        reportMentor:
+            type: string
+            length: 255
+            nullable: true
+            column: report_mentor
+        reportDetail:
+            type: text
+            nullable: true
+            column: report_detail
+        reportPhoto:
+            type: string
+            length: 255
+            nullable: true
+            column: report_photo
+        reportAbsen:
+            type: string
+            length: 255
+            nullable: true
+            column: report_absen
+        
+    lifecycleCallbacks: {  }

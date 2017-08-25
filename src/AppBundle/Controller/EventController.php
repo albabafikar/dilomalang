@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dzaki
- * Date: 02/08/17
- * Time: 21:12
- */
 
 namespace AppBundle\Controller;
 
@@ -31,43 +25,13 @@ class EventController extends Controller
             $event->setEventMentorjob($request->get('mentor_job'));
             $event->setEventTime($request->get('event_time'));
             $event->setEventParticipant($request->get('event_participant'));
-            $event->setEventPrice($request->get('event_price'));
-            $event->setEventDetail($request->get('event_detail'));
-            $event->setEventPrice($request->get('event_price'));
             $event->setEventCategory($request->get('event_category'));
-
-            if(!is_dir($this->getParameter('event_directory')['resource'])){
-                @mkdir($this->getParameter('event_directory')['resource'],0777,true);
-            }
-
-            $file = $request->files->get('event_photo');
-
-            $filename = md5(uniqid()) . '.' . $file->guessExtension();
-
-            $exAllowed = array('jpg', 'png', 'jpeg');
-
-            $ext = pathinfo($filename, PATHINFO_EXTENSION);
-
-            if (in_array($ext, $exAllowed)) {
-                if ($file instanceof UploadedFile) {
-                    if (!($file->getClientSize() > (1024 * 1024 * 1))) {
-                        ImageResize::createFromFile(
-                            $request->files->get('event_photo')->getPathName()
-                        )->saveTo($this->getParameter('event_directory')['resource'] . '/' . $filename, 20, true);
-                        $event->setEventPhoto($filename);
-                    } else {
-                        return 'gambar tidak boleh lebih dari 1 MB';
-                    }
-                }
-            } else {
-                return 'cek kembali extension gambar anda';
-            }
 
 //            return var_dump($event);
             $em->persist($event);
             $em->flush();
 
-            return 'data berhasil masuk';
+            return $this->redirect($this->generateUrl('app_event_list'));
         }
 
         return $this->render('AppBundle:event:create-event.html.twig');
@@ -110,36 +74,9 @@ class EventController extends Controller
             $event->setEventMentorjob($request->get('mentor_job'));
             $event->setEventTime($request->get('event_time'));
             $event->setEventParticipant($request->get('event_participant'));
-            $event->setEventPrice($request->get('event_price'));
             $event->setEventDetail($request->get('event_detail'));
-            $event->setEventPrice($request->get('event_price'));
+            $event->setEventCategory($request->get('event_category'));
 
-            if(!is_dir($this->getParameter('event_directory')['resource'])){
-                @mkdir($this->getParameter('event_directory')['resource'],0777,true);
-            }
-
-            $file = $request->files->get('event_photo');
-
-            $filename = md5(uniqid()) . '.' . $file->guessExtension();
-
-            $exAllowed = array('jpg', 'png', 'jpeg');
-
-            $ext = pathinfo($filename, PATHINFO_EXTENSION);
-
-            if (in_array($ext, $exAllowed)) {
-                if ($file instanceof UploadedFile) {
-                    if (!($file->getClientSize() > (1024 * 1024 * 1))) {
-                        ImageResize::createFromFile(
-                            $request->files->get('event_photo')->getPathName()
-                        )->saveTo($this->getParameter('event_directory')['resource'] . '/' . $filename, 20, true);
-                        $event->setEventPhoto($filename);
-                    } else {
-                        return 'gambar tidak boleh lebih dari 1 MB';
-                    }
-                }
-            } else {
-                return 'cek kembali extension gambar anda';
-            }
 
             $em->persist($event);
             $em->flush();
@@ -149,7 +86,21 @@ class EventController extends Controller
         }
 
         return $this->render('AppBundle:event:update-event.html.twig',['data'=>$event]);
+        
+    }
 
+     public function ViewEventAction($id)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $event = $em->getRepository(Events::class)->find($id);
+
+        // $family = $em->getRepository(UserFamily::class)->findByUserId($id);
+
+        return $this->render('AppBundle:event:view-event.html.twig', [
+            'event' => $event
+          
+        ]);
     }
 
 }

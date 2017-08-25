@@ -1,5 +1,4 @@
-{% block 'subLayout.html.twig' %}
-
+{% extends 'subLayout.html.twig' %}
 {% block content %}
     <div class="container-fluid">
         <div class="row clearfix">
@@ -10,8 +9,21 @@
                             <center>Update Event</center>
                         </h2>
                     </div>
+                     
                     <div class="body">
                         <form method="post">
+                            <div class="form-group">
+                                <p>Event Category</p>
+                                <select name="event_category" id="" class="form-control">
+                                    <option value="">-- Pilih Event Category</option>
+                                    <option value="1" {% if data.eventCategory is defined and not null %}{% if data.eventCategory == 1 %}selected{% endif %}{% endif %}>Workshop Teknis</option>
+                                    <option value="2" {% if data.eventCategory is defined and not null %}{% if data.eventCategory == 2 %}selected{% endif %}{% endif %}>Wokshop Desain</option>
+                                    <option value="3" {% if data.eventCategory is defined and not null %}{% if data.eventCategory == 3 %}selected{% endif %}{% endif %}>Workshop Manajemen</option>
+                                    <option value="4" {% if data.eventCategory is defined and not null %}{% if data.eventCategory == 4 %}selected{% endif %}{% endif %}>Business Gathering</option>
+                                    <option value="5" {% if data.eventCategory is defined and not null %}{% if data.eventCategory == 5 %}selected{% endif %}{% endif %}>Kompetisi Lokal</option>
+                                    <option value="6" {% if data.eventCategory is defined and not null %}{% if data.eventCategory == 6 %}selected{% endif %}{% endif %}>Dilo on Campus</option>
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <p>Nama Event</p>
                                 <div class="form-line">
@@ -21,13 +33,13 @@
                             <div class="form-group">
                                 <p>Tanggal Event</p>
                                 <div class="form-line">
-                                    <input type="text" name="event_date" id="" class="datepicker form-control" value="{% if data.eventDate is defined and not null %}{{ date.eventDate|date('d m Y') }}{% endif %}">
+                                    <input type="datepicker" name="event_date" id="" class="datepicker form-control" value="{% if data.eventDate is defined and not null %}{{ data.eventDate|date('d-m-Y') }}{% endif %}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <p>Topic Event</p>
                                 <div class="form-line">
-                                    <textarea name="event_topic" class="form-control" id="" cols="30" rows="10"></textarea>
+                                    <input type="text" name="event_topic" class="form-control" id="" value="{% if data.eventTopic is defined and not null %}{{ data.eventTopic }} {% endif %}">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -54,34 +66,7 @@
                                     <input type="text" name="event_participant" id="" class="form-control" value="{% if data.eventParticipant is defined and not null %}{{ data.eventParticipant }}{% endif %}">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <p>Detail Event</p>
-                                <div class="form-line">
-                                    <textarea name="event_detail" class="form-control" id="" cols="30" rows="10"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <p>Event Price</p>
-                                <div class="form-line">
-                                    <input type="text" name="event_price" id="" class="form-control" value="{% if data.eventPrice is defined and not null %}{% endif %}">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <p>Event Category</p>
-                                <select name="event_category" id="" class="form-control">
-                                    <option value="">-- Pilih Event Category</option>
-                                    <option value="1" {% if data.eventCategory is defined and not null %}{% if data.eventCategory == 1 %}selected{% endif %}{% endif %}>Workshop Teknis</option>
-                                    <option value="2" {% if data.eventCategory is defined and not null %}{% if data.eventCategory == 2 %}selected{% endif %}{% endif %}>Wokshop Desain</option>
-                                    <option value="3" {% if data.eventCategory is defined and not null %}{% if data.eventCategory == 3 %}selected{% endif %}{% endif %}>Workshop Manajemen</option>
-                                    <option value="4" {% if data.eventCategory is defined and not null %}{% if data.eventCategory == 4 %}selected{% endif %}{% endif %}>Business Gathering</option>
-                                    <option value="5" {% if data.eventCategory is defined and not null %}{% if data.eventCategory == 5 %}selected{% endif %}{% endif %}>Kompetisi Lokal</option>
-                                    <option value="6" {% if data.eventCategory is defined and not null %}{% if data.eventCategory == 6 %}selected{% endif %}{% endif %}>Dilo on Campus</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <p>Masukkan Foto Event</p>
-                                <input type="file" accept="image/*" name="event_photo" id="" class="form-control">
-                            </div>
+                            
                             <button class="btn btn-primary waves-effect">SUBMIT</button>
                         </form>
                     </div>

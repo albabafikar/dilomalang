@@ -13,7 +13,6 @@ AppBundle\Entity\Events:
             type: string
             length: 255
             nullable: true
-            unique: true
             column: event_name
         eventDate:
             type: date

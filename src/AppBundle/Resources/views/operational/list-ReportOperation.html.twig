@@ -1,11 +1,12 @@
 {% extends 'subLayout.html.twig' %}
 
-{% block title %}Laporan Operasional{% endblock %}
+{% block title %}Daftar Laporan Operasional{% endblock %}
 
 {% block content %}
     <div class="container-fluid">
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <img src="http://malangfrontend.github.io/who-are-we/img/dilo-logo-default.png" class="print-only" width="20%"/>
                 <div class="card">
                     <div class="header">
                         <h2>
@@ -22,7 +23,7 @@
                                     <th>Kuantitas (qty)</th>
                                     <th>Harga Satuan (Rp)</th>
                                     <th>Kategori</th>                                        
-                                    <th>Aksi</th>
+                                    <th class="no-print">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -99,7 +100,7 @@
                                                 <span>Refreshment</span>
                                             {% endif %}
                                        {% endif %}     
-                                       <td>
+                                       <td class="no-print">
                                         <a href="{{ path('app_reportoperation_update',{id: dat.id}) }}" class="btn btn-primary btn-xs">UPDATE</a>
                                         <a href="{{ path('app_reportoperation_delete',{id: dat.id}) }}" class="btn btn-danger btn-xs">DELETE</a>
                                         <a href="{{ path('app_reportoperation_view',{id: dat.id}) }}" class="btn btn-green btn-xs"> VIEW </a>
@@ -112,7 +113,9 @@
                             {% endif %}
                             </tbody>
                         </table>
-                    </div>
+                        <button class="no-print" type="button" onclick="print('card')" class="btn btn-primary btn-xs" style="position:absolute;right:30px;border-radius: 0;">EXPORT SEMUA LAPORAN OPERASIONAL</button>
+                        </br>
+                        </div>
                 </div>
             </div>
         </div>

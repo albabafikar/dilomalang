@@ -6,6 +6,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Management;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ManagementController extends Controller
 {
@@ -16,7 +17,7 @@ class ManagementController extends Controller
 
         if($request->getMethod() == 'POST') {
             $management = new Management();
-            $management->setManageMonth($request->get('month'));
+            $management->setManageMonth($request->get('manage_month'));
             $management->setManageYear($request->get('manage_year'));
             $management->setManageDataMember($request->get('manage_datamember'));
             $management->setManageDataUser($request->get('manage_datauser'));
@@ -64,7 +65,7 @@ class ManagementController extends Controller
         $management = $em->getRepository(Management::class)->find($id);
 
         if($request->getMethod() == 'POST') {
-            $management = new Management();
+          
             $management->setManageMonth($request->get('manage_month'));
             $management->setManageYear($request->get('manage_year'));
             $management->setManageDataMember($request->get('manage_datamember'));
@@ -74,14 +75,26 @@ class ManagementController extends Controller
             $management->setManageDataig($request->get('manage_dataig'));
             $management->setManageDataStartup($request->get('manage_datastartup'));
             $management->setManageDataCommunity($request->get('manage_datacommunity')); 
-            $em->persist($management);
-            $em->flush();
+             $em->persist($management);
+             $em->flush();
 
-            return $this->redirect($this->generateUrl('app_management_list'));
+             return $this->redirect($this->generateUrl('app_management_list'));
         }
         return $this->render('AppBundle:management:update-management.html.twig',['data'=>$management]);
 
     }
+    public function ViewManagementAction($id)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $management = $em->getRepository(Management::class)->find($id);
+
+        // $family = $em->getRepository(UserFamily::class)->findByUserId($id);
+
+        return $this->render('AppBundle:management:view-management.html.twig', ['data'=>$management]);
+
+    }
+
 
 
 }

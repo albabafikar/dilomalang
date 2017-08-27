@@ -1,15 +1,18 @@
 {% extends 'subLayout.html.twig' %}
 
-{% block title %}Member{% endblock %}
+{% block title %}
+Daftar Visitor DILo Malang
+{% endblock %}
 
 {% block content %}
     <div class="container-fluid">
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
-                    <div class="header">
+                    <div class="header bg-red">
+                    <img src="http://malangfrontend.github.io/who-are-we/img/dilo-logo-default.png" class="print-only" width="20%"/>
                         <h2>
-                            <center>Daftar Semua Member</center>
+                            <center> <strong> Daftar Visitor DILo Malang </strong> </center>
                         </h2>
                     </div>
                     <div class="body">
@@ -17,12 +20,12 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Tanggal</th>
+                                    <th>Tanggal Kehadiran</th>
                                     <th>Nama</th>
                                     <th>Jumlah</th>
                                     <th>Email</th>
                                     <th>Status</th>
-                                    <th>Aksi</th>
+                                    <th class="no-print">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,25 +34,25 @@
                                 {% for dat in data %}
                                     <tr>
                                         <td>{{ i }}</td>
-                                        <td>{% if dat.memberDate is defined and not null %}{{ dat.memberDate|date('d m Y') }}{% endif %}</td>
+                                        <td>{% if dat.memberDate is defined and not null %}{{ dat.memberDate|date('l, j F Y') }}{% endif %}</td>
                                         <td>{% if dat.memberName is defined and not null %}{{ dat.memberName }}{% endif %}</td>
                                         <td>{% if dat.memberTotal is defined and not null %}{{ dat.memberTotal }}{% endif %}</td>
                                         <td>{% if dat.memberEmail is defined and not null %}{{ dat.memberEmail }}{% endif %}</td>
                                          <td>{% if dat.memberStatus is defined and not null %}
                                             {% if dat.memberStatus == 1 %}
-                                                <span class="label label-success">Pelajar</span>
+                                                <span>Pelajar</span>
                                             {% elseif dat.memberStatus == 2 %}
-                                                <span class="label label-success">Umum</span>
+                                                <span>Umum</span>
                                             {% elseif dat.memberStatus == 3 %}
-                                                <span class="label label-success">Wiraswasta</span>
+                                                <span>Wiraswasta</span>
                                             {% elseif dat.memberStatus == 4 %}
-                                                <span class="label label-success">Pegawai Swasta</span>
+                                                <span>Pegawai Swasta</span>
                                             {% elseif dat.memberStatus == 5 %}
-                                                <span class="label label-success">Pegawai Negeri</span>
+                                                <span>Pegawai Negeri</span>
                                             {% endif %}
                                         {% endif %}
                                         </td>
-                                        <td>
+                                        <td class="no-print">
                                             <a href="{{ path('app_member_update',{id: dat.id}) }}" class="btn btn-primary btn-xs">UPDATE</a>
                                             <a href="{{ path('app_member_delete',{id: dat.id}) }}" class="btn btn-danger btn-xs">DELETE</a>
                                         </td>
@@ -64,7 +67,7 @@
                             </tbody>
                         </table>
                         
-                        <button type="button" onclick="print('card')" class="btn btn-primary btn-xs" style="position:absolute;right:30px;border-radius: 0;">EXPORT SEMUA DATA PENGUNJUNG</button>
+                        <button class="no-print" type="button" onclick="print('card')" class="btn btn-primary btn-xs" style="position:absolute;right:30px;border-radius: 0;">EXPORT SEMUA DATA PENGUNJUNG</button>
                 </br></br>
                     </div>
                 </div>

@@ -1,7 +1,26 @@
 {% extends 'subLayout.html.twig' %}
+{% block title %}
+Daftar Pengajuan Kegiatan DILo Malang
+{% endblock %}
+ {% block customCSS %}
+    <style media="print" type="text/css">
+    .no-print {
+    display:none;
+  }
+  .print-only {
+      display:block;
+  }
 
+  .printed-area {
+    width: 100% !important;
+    margin: 0 !important;
+  }
 
-
+  .content {
+    margin: 0 !important;
+  }
+    </style>
+{% endblock %}
 {% block content %}
     <div class="container-fluid">
         <div class="row clearfix">
@@ -22,7 +41,7 @@
                                     <th>Tema</th>
                                     <th>Pemateri</th>
                                     <th>Kategory</th>
-                                    <th>Aksi</th>
+                                    <th class="no-print">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,7 +50,8 @@
                             {% for dat in data %}
                                 <tr>
                                     <td>{{ i }}</td>
-                                    <td>{% if dat.eventDate is defined and not null %}{{ dat.eventDate|date('d-m-Y') }}{% endif %}</td>
+                                    
+                                    <td>{% if dat.eventDate is defined and not null %}{{ dat.eventDate|date('j F Y') }}{% endif %}</td>
                                     <td>{% if dat.eventName is defined and not null %}{{ dat.eventName }}{% endif %}</td>
                                     <td>{% if dat.eventMentor is defined and not null %}{{ dat.eventMentor }}{% endif %}</td>
                                     <td>
@@ -51,13 +71,16 @@
                                             {% endif %}
                                         {% endif %}
                                     </td>
-                                    <td>
+                                    <td class="no-print">
                                         <a href="{{ path('app_event_update',{id: dat.id}) }}" class="btn btn-primary btn-xs">UPDATE</a>
                                         <a href="{{ path('app_event_delete',{id: dat.id}) }}" class="btn btn-danger btn-xs">DELETE</a>
-                                        <a href="{{ path('app_event_view',{id: dat.id}) }}" class="btn btn-purple">EXPORT</a>
+                                        <a href="{{ path('app_event_view',{id: dat.id}) }}" class="btn btn-green btn-xs">EXPORT</a>
+                                    
                                     </td>
                                 </tr>
+                                
                                 {% set i = i + 1 %}
+                            
                             {% endfor %}
                             {% endif %}
                             </tbody>

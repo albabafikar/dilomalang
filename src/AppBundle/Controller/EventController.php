@@ -90,17 +90,17 @@ class EventController extends Controller
     }
 
      public function ViewEventAction($id)
-    {
-        $em = $this->getDoctrine()->getEntityManager();
+{
+    $em = $this->getDoctrine()->getEntityManager();
 
-        $event = $em->getRepository(Events::class)->find($id);
+    $event = $em->getRepository(Events::class)->find($id);
 
-        // $family = $em->getRepository(UserFamily::class)->findByUserId($id);
+    // $family = $em->getRepository(UserFamily::class)->findByUserId($id);
 
-        return $this->render('AppBundle:event:view-event.html.twig', [
-            'event' => $event
-          
-        ]);
-    }
+    return $this->render('AppBundle:event:view-event.html.twig', [
+        'event' => $event
+
+    ]);
+}
 
 }

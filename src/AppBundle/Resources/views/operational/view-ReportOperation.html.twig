@@ -1,15 +1,18 @@
 {% extends 'subLayout.html.twig' %}
-
+{% block title%}
+Laporan Operasional DILO
+{% endblock %}
 {% block content %}         
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="card">
+    
         <div class="body">
-        
-    <h3>
-    LAPORAN OPERASIONAL DILo MALANG         
-    </h3> 
+        <img src="http://malangfrontend.github.io/who-are-we/img/dilo-logo-default.png" class="print-only" width="20%"/>
+            <h3>
+            LAPORAN OPERASIONAL DILo MALANG         
+            </h3> 
 
-                   <button type="button" onclick="print('printed-area')" class="btn btn-primary btn-xs" style="position:absolute;right:30px;border-radius: 0;"> CETAK</button>
+            <button class="no-print" type="button" onclick="print('printed-area')" class="btn btn-primary btn-xs" style="position:absolute;right:30px;border-radius: 0;"> CETAK</button>
     
                 <div id="printed-area">
                        <table class="table table no-border table-striped table-hover dataTable js-exportable">
@@ -107,6 +110,10 @@
                             <tr>
                                 <td class="fw-bold">Harga Satuan </td>
                                 <td colspan="6"> : &nbsp; {% if reportoperation.RoUnitprice is defined %}{{ reportoperation.RoUnitprice }}{% else %}-{% endif %}</td>
+                            </tr> 
+                            <tr>
+                                <td class="fw-bold">Harga Total </td>
+                                <td colspan="6"> : &nbsp; {% if reportoperation.RoTotal is defined %}{{ reportoperation.RoTotal }}{% else %}-{% endif %}</td>
                             </tr> 
                             <tr>
                                 <td class="fw-bold">Tanggal Nota </td>

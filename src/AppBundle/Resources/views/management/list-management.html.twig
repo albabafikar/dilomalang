@@ -1,14 +1,18 @@
 {% extends 'subLayout.html.twig' %}
-{% block title %}List Data Laporan Manajemen{% endblock %}
+
+{% block title %}
+List Data Laporan Manajemen
+{% endblock %}
 
 {% block content %}
     <div class="container-fluid">
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
-                    <div class="header">
+                    <div class="header bg-purple">
+                     <img src="http://malangfrontend.github.io/who-are-we/img/dilo-logo-default.png" class="print-only" width="20%"/>                   
                         <h2>
-                            <center>Data Laporan Manajemen DILo Malang</center>
+                            <center><strong>Data Laporan Manajemen DILo Malang</strong></center>
                         </h2>
                     </div>
                     <div class="body">
@@ -23,7 +27,8 @@
                                     <th>Twitter (Akun</th>
                                     <th>Instagram (Akun)</th>
                                     <th>Startup</th>
-                                    <th>Community</th>
+                                    <th>Komunitas</th>
+                                    <th class="no-print"> Aksi </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,7 +36,7 @@
                                {% set i = 1 %}
                                 {% for dat in data %}
                                     <tr>
-                                          <td>{% if dat.manageMonth is defined and not null %}
+                                        <td>{% if dat.manageMonth is defined and not null %}
                                             {% if dat.manageMonth == 1 %}
                                                 <span>Januari</span>
                                             {% elseif dat.manageMonth == 2 %}
@@ -93,8 +98,10 @@
                                         <td>{% if dat.manageDatacommunity is defined and not null %}{{ dat.manageDatacommunity }}{% endif %}</td>
 
 
-                                        <td>
-
+                                       <td class="no-print">
+                                            <a href="{{ path('app_management_update',{id: dat.id}) }}" class="btn btn-primary btn-xs">UPDATE</a>
+                                            <a href="{{ path('app_management_delete',{id: dat.id}) }}" class="btn btn-danger btn-xs">DELETE</a>
+                                            <a href="{{ path('app_management_view',{id: dat.id}) }}" class="btn btn-success btn-xs">VIEW</a>
                                         </td>
                                     </tr>
                                     {% set i = i + 1 %}
@@ -107,7 +114,7 @@
                             </tbody>
                         </table>
                         
-                        <button type="button" onclick="print('card')" class="btn btn-primary btn-xs" style="position:absolute;right:30px;border-radius: 0;">EXPORT SEMUA DATA PENGUNJUNG</button>
+                        <button class="no-print" type="button" onclick="print('card')" class="btn btn-primary btn-xs" style="position:absolute;right:30px;border-radius: 0;">EXPORT SEMUA DATA PENGUNJUNG</button>
                 </br></br>
                     </div>
                 </div>

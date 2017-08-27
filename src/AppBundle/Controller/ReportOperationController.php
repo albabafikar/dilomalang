@@ -24,7 +24,7 @@ class ReportOperationController extends Controller
             $reportoperation->setRoYear($request->get('ro_year'));
             $reportoperation->setRoQty($request->get('ro_qty'));
             $reportoperation->setRoUnitprice($request->get('ro_unitprice'));
-            $reportoperation->setRoFile($request->get('ro_file'));
+            $reportoperation->setRoTotal($request->get('ro_total'));
             $reportoperation->setRoStatus($request->get('ro_status'));
             $reportoperation->setRoDate($request->get('ro_date'));
             $reportoperation->setRoNote($request->get('ro_note'));
@@ -93,7 +93,7 @@ class ReportOperationController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        $reportReportOperation = $em->getRepository(ReportOperation::class)->find($id);
+        $reportOperation = $em->getRepository(ReportOperation::class)->find($id);
 
         if($request->getMethod() == 'POST') {
             $reportoperation->setRoName($request->get('ro_name'));
@@ -101,7 +101,7 @@ class ReportOperationController extends Controller
             $reportoperation->setRoYear($request->get('ro_year'));
             $reportoperation->setRoQty($request->get('ro_qty'));
             $reportoperation->setRoUnitprice($request->get('ro_unitprice'));
-            $reportoperation->setRoFile($request->get('ro_file'));
+            $reportoperation->setRoTotal($request->get('ro_total'));
             $reportoperation->setRoStatus($request->get('ro_status'));
             $reportOperation->setRoDate(date('Y-m-d',strtotime($request->get('ro_date'))));
             $reportoperation->setRoNote($request->get('ro_note'));

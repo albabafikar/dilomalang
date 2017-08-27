@@ -1,10 +1,13 @@
 {% extends 'subLayout.html.twig' %}
-
+{% block title %} 
+Pengajuan Kegiatan DILo Malang
+ {% endblock %}
 {% block content %}         
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="card">
         <div class="body">
 
+    <img src="http://malangfrontend.github.io/who-are-we/img/dilo-logo-default.png" class="print-only" width="20%"/>
 
             <h3>
      {% if event.eventCategory is defined and not null %}
@@ -50,23 +53,25 @@
                                 <td colspan="6"> : &nbsp; {% if event.eventMentor is defined %}{{ event.eventMentor }}{% else %}-{% endif %}</td>
                             </tr> 
                             <tr>
+                                <td class="fw-bold">Pekerjaan Narasumber </td>
+                                <td colspan="6"> : &nbsp;   {% if event.mentorJob is defined %}{{ event.mentorJob }}{% else %}-{% endif %}</td>
+                           
+                            
+                            </tr> 
+                            <tr>
                                 <td class="fw-bold">Topik Pembahasan </td>
                                 <td colspan="6"> : &nbsp; {% if event.eventTopic is defined %}{{ event.eventTopic }}{% else %}-{% endif %}</td>
                             </tr> 
                             <tr>
                                 <td class="fw-bold">Waktu Pelaksanan </td>
-                                <td colspan="6"> : &nbsp;   {% if event.eventTime is defined %}{{ event.eventTime|date('H:i') }}{% else %}-{% endif %}</td>
-                           
-                           
+                                <td colspan="6"> : &nbsp;   {% if event.eventTime is defined %}{{ event.eventTime|date('H:i') }}{% else %}-{% endif %}</td                        
                             </tr> 
+                            
                             <tr>
                                 <td class="fw-bold">Peserta </td>
-                                <td colspan="6"> : &nbsp; {% if event.eventMember is defined %}{{ event.eventMember }}{% else %}-{% endif %}</td>
+                                <td colspan="6"> : &nbsp; {% if event.eventParticipant is defined %}{{ event.eventParticipant }}{% else %}-{% endif %}</td>
                             </tr> 
-                            <tr>
-                                <td class="fw-bold">Detail Kegiatan </td>
-                                <td colspan="6"> : &nbsp; {% if event.eventDetail is defined %}{{ event.eventDetail }}{% else %}-{% endif %}</td>
-                            </tr> 
+                           
 
                              
 

@@ -8,3 +8,17 @@ app_management_list:
    defaults:
       _controller: AppBundle:Management:getAllManagement
 
+app_management_delete:
+    path: /delete-Management/{id}
+    defaults:
+      _controller: AppBundle:Management:deleteManagement
+
+app_management_update:
+    path: /update-Management/{id}
+    defaults:
+      _controller: AppBundle:Management:updateManagement
+
+app_management_view:
+    path: /view-Management/{id}
+    defaults:
+      _controller: AppBundle:Management:viewManagement  

@@ -39,7 +39,7 @@ class ReportOperation
     /**
      * @var string
      */
-    private $roFile;
+    private $roTotal;
 
     /**
      * @var string
@@ -182,26 +182,26 @@ class ReportOperation
     }
 
     /**
-     * Set roFile
+     * Set roTotal
      *
-     * @param string $roFile
+     * @param string $roTotal
      * @return ReportOperation
      */
-    public function setRoFile($roFile)
+    public function setRoTotal($roTotal)
     {
-        $this->roFile = $roFile;
+        $this->roTotal = $roTotal;
 
         return $this;
     }
 
     /**
-     * Get roFile
+     * Get roTotal
      *
      * @return string 
      */
-    public function getRoFile()
+    public function getRoTotal()
     {
-        return $this->roFile;
+        return $this->roTotal;
     }
 
     /**

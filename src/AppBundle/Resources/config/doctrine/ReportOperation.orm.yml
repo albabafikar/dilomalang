@@ -34,11 +34,11 @@ AppBundle\Entity\ReportOperation:
             length: 255
             nullable: true
             column: ro_unitprice
-        roFile:
+        roTotal:
             type: string
             length: 255
             nullable: true
-            column: ro_file
+            column: ro_total
         roStatus:
             type: string
             length: 255

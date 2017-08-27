@@ -1,11 +1,15 @@
 {% extends 'subLayout.html.twig' %}
-
+{% block title %}
+Laporan Kegiatan DILo Malang
+{% endblock %}
 {% block content %}         
 <div class="container-fluid">
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="card">
         <div class="body">
+
+            <img src="http://malangfrontend.github.io/who-are-we/img/dilo-logo-default.png" class="print-only" width="20%"/>
         
             <h3>
      {% if report.reportCategory is defined and not null %}
@@ -28,7 +32,7 @@
     <h3>{{ report.reportTitle }}</h3>
 
 <div class="body">
-<button type="button" onclick="print('printed-area')" class="btn btn-primary btn-xs" style="position:absolute;right:30px;border-radius: 0;"> CETAK</button>
+<button class="no-print" type="button" onclick="print('printed-area')" class="btn btn-primary btn-xs" style="position:absolute;right:30px;border-radius: 0;"> CETAK</button>
     
                 <div id="printed-area">
                        <table class="table table no-border table-striped table-hover dataTable js-exportable">
@@ -67,7 +71,11 @@
                                 <td class="fw-bold">Detail Kegiatan </td>
                                 <td colspan="6"> : &nbsp; {% if report.reportDetail is defined %}{{ report.reportDetail }}{% else %}-{% endif %}</td>
                             </tr> 
-
+                             <tr>
+                                <td class="fw-bold">Foto Kegiatan </td>
+                                </br> 
+                                <td colspan="6"> : &nbsp; {% if report.reportPhoto is defined %} <img src="{{ asset('uploads') }}/images/report/{{ report.reportPhoto }}" alt="" width="400px"> {% else %}-{% endif %}</td>
+                            </tr> 
                              
 
                             </tbody>

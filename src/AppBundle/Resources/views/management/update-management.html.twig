@@ -7,64 +7,95 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            <center></center>
+                            <center><strong>UPDATE DATA LAPORAN MANAGEMENT DILO</strong></center>
                         </h2>
                     </div>
                     <div class="body">
                         <form method="post">
                             <div class="form-group">
-                                <p>Nama Member</p>
-                                <div class="form-line">
-                                    <input type="text" name="member_name" class="form-control" value="{% if data.memberName is defined and not null %}{{ data.memberName }}{% endif %}">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <p>Aktivitas Member</p>
-                                <div class="form-line">
-                                    <input type="text" name="member_activity" class="form-control" value="{% if data.memberActivity is defined and not null %}{{ data.memberActivity }}{% endif %}" >
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <p>Jumlah Member</p>
-                                <div class="form-line">
-                                    <input type="text" name="member_total" class="form-control" value="{% if data.memberTotal is defined and not null %}{{ data.memberTotal }}{% endif %}">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <p>Jenis Kelamin</p>
-                                <select name="member_genre" id="" class="form-control">
-                                    <option value="">-- Pilih Jenis Kelamin --</option>
-                                    <option value="1" {% if data.memberGenre is defined and not null %}{% if data.memberGenre == 1 %}selected{% endif %}{% endif %}>Laki-laki</option>
-                                    <option value="2" {% if data.memberGenre is defined and not null %}{% if data.memberGenre == 2 %}selected{% endif %}{% endif %}>Perempuan</option>
+                                <p>Bulan</p>
+                                    <select name="manage_month" id="" class="form-control">
+                                    <option value="">-- Pilih Bulan Laporan --</option>
+                                    <option value="1" {% if data.manageMonth is defined and not null %}{% if data.manageMonth == 1 %}selected{% endif %}{% endif %}>Januari</option>
+                                    <option value="2" {% if data.manageMonth is defined and not null %}{% if data.manageMonth == 2 %}selected{% endif %}{% endif %}>Februari</option>
+                                    <option value="3" {% if data.manageMonth is defined and not null %}{% if data.manageMonth == 3 %}selected{% endif %}{% endif %}>Maret</option>
+                                    <option value="4" {% if data.manageMonth is defined and not null %}{% if data.manageMonth == 4 %}selected{% endif %}{% endif %}>April</option>
+                                    <option value="5" {% if data.manageMonth is defined and not null %}{% if data.manageMonth == 5 %}selected{% endif %}{% endif %}>Mei</option>
+                                    <option value="6" {% if data.manageMonth is defined and not null %}{% if data.manageMonth == 6 %}selected{% endif %}{% endif %}>Juni</option>
+                                    <option value="7" {% if data.manageMonth is defined and not null %}{% if data.manageMonth == 7 %}selected{% endif %}{% endif %}>Juli</option>
+                                    <option value="8" {% if data.manageMonth is defined and not null %}{% if data.manageMonth == 8 %}selected{% endif %}{% endif %}>Agustus</option>
+                                    <option value="9" {% if data.manageMonth is defined and not null %}{% if data.manageMonth == 9 %}selected{% endif %}{% endif %}>September</option>
+                                    <option value="10" {% if data.manageMonth is defined and not null %}{% if data.manageMonth == 10 %}selected{% endif %}{% endif %}>>Oktober</option>
+                                    <option value="11" {% if data.manageMonth is defined and not null %}{% if data.manageMonth == 11 %}selected{% endif %}{% endif %}>>November</option>
+                                    <option value="12" {% if data.manageMonth is defined and not null %}{% if data.manageMonth == 12 %}selected{% endif %}{% endif %}>>Desember</option>
                                 </select>
-                            </div>
+                                </div>
+
+
                             <div class="form-group">
-                                <p>Pilih Status</p>
-                                <select name="member_status" id="" class="form-control">
-                                    <option value="">-- Pilih Status Member --</option>
-                                    <option value="1" {% if data.memberStatus is defined and not null %}{% if data.memberStatus == 1 %}selected{% endif %}{% endif %}>Mahasiswa</option>
-                                    <option value="2" {% if data.memberStatus is defined and not null %}{% if data.memberStatus == 2 %}selected{% endif %}{% endif %}>Umum</option>
-                                </select>
-                            </div>
+                                <p>Tahun</p>
+                                   <select name="manage_year" id="" class="form-control">
+                                   <option value="">-- Pilih Tahun Laporan -- </option>
+                                   <option value="1"  {% if data.manageYear is defined and not null %}{% if data.manageYear == 1 %}selected{% endif %}{% endif %}> 2017 </option>
+                                   <option value="2"  {% if data.manageYear is defined and not null %}{% if data.manageYear == 2 %}selected{% endif %}{% endif %}> 2018 </option>
+                                   <option value="3"  {% if data.manageYear is defined and not null %}{% if data.manageYear == 3 %}selected{% endif %}{% endif %}> 2019 </option>
+                                   <option value="4"  {% if data.manageYear is defined and not null %}{% if data.manageYear == 4 %}selected{% endif %}{% endif %}> 2020 </option>
+                                   <option value="5"  {% if data.manageYear is defined and not null %}{% if data.manageYear == 5 %}selected{% endif %}{% endif %}> 2021 </option>
+                                   <option value="6"  {% if data.manageYear is defined and not null %}{% if data.manageYear == 6 %}selected{% endif %}{% endif %}> 2022 </option>
+                                   <option value="7"  {% if data.manageYear is defined and not null %}{% if data.manageYear == 7 %}selected{% endif %}{% endif %}> 2023 </option>
+                                   <option value="8"  {% if data.manageYear is defined and not null %}{% if data.manageYear == 8 %}selected{% endif %}{% endif %}> 2024 </option>
+                                   <option value="9"  {% if data.manageYear is defined and not null %}{% if data.manageYear == 9 %}selected{% endif %}{% endif %}> 2025 </option>
+                                   <option value="10"  {% if data.manageYear is defined and not null %}{% if data.manageYear == 10 %}selected{% endif %}{% endif %}> ... </option>
+                                   </select>
+                                </div>
+
                             <div class="form-group">
-                                <p>Email Member</p>
+                            <p>Jumlah Member Terdaftar</p>
                                 <div class="form-line">
-                                    <input type="email" name="member_email" id="" class="form-control" value="{% if data.memberEmail is defined and not null %}{{ data.memberEmail }}{% endif %}">
+                                    <input type="text" name="manage_datamember" class="form-control" value="{% if data.manageDatamember is defined and not null %}{{ data.manageDatamember }}{% endif %}">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <p>Member Date</p>
+                                <p>Jumlah Pengunjung Bulanan</p>
                                 <div class="form-line">
-                                    <input type="text" name="member_date" id="" class="datepicker form-control" value="{% if data.memberDate is defined and not null %}{{ data.memberDate|date('d m Y') }}{% endif %}">
+                                    <input type="text" name="manage_datauser" class="form-control" value="{% if data.manageDatauser is defined and not null %}{{ data.manageDatauser }}{% endif %}">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <p>No. HP / WA</p>
+                                <p>Jumlah Follower Facebook</p>
                                 <div class="form-line">
-                                    <input type="numeric" name="member_phone" id="" class="form-control" value="{% if data.memberPhone is defined and not null %}{{ data.memberPhone }}{% endif %}">
+                                    <input type="text" name="manage_datafb" class="form-control" value="{% if data.manageDatafb is defined and not null %}{{ data.manageDatafb }}{% endif %}">
                                 </div>
                             </div>
-                            <button class="btn btn-primary waves-effect">SUBMIT</button>
+                            <div class="form-group">
+                                <p>Jumlah Follower Twitter</p>
+                                <div class="form-line">
+                                    <input type="text" name="manage_datatwitter" class="form-control" value="{% if data.manageDatatwitter is defined and not null %}{{ data.manageDatatwitter }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Jumlah Follower Instagram</p>
+                                <div class="form-line">
+                                    <input type="text" name="manage_dataig" class="form-control" value="{% if data.manageDataig is defined and not null %}{{ data.manageDataig }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Jumlah Startup</p>
+                                <div class="form-line">
+                                    <input type="text" name="manage_datastartup" class="form-control" value="{% if data.manageDatastartup is defined and not null %}{{ data.manageDatastartup }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Jumlah Komunitas</p>
+                                <div class="form-line">
+                                    <input type="text" name="manage_datacommunity" class="form-control" value="{% if data.manageDatacommunity is defined and not null %}{{ data.manageDatacommunity }}{% endif %}">
+                                </div>
+                            </div>
+
+
+
+
+                            <button class="btn btn-primary waves-effect">UPDATE</button>
                         </form>
                     </div>
                 </div>

@@ -2,7 +2,17 @@
 
 {% block innerLayout %}
 <div class="login-page">
- <div class="login-box">
+    {% for message in app.session.getFlashBag.get('message_success') %}
+        <div class="alert alert-success">
+            <strong>Sukses!</strong> {{ message }}.
+        </div>
+    {% endfor %}
+    {% for message in app.session.getFlashBag.get('message_failure') %}
+        <div class="alert alert-danger">
+            <strong>Oops!</strong> {{ message }}.
+        </div>
+    {% endfor %}
+    <div class="login-box">
         <div class="logo">
             <a href="javascript:void(0);">Admin<b>Login</b></a>
             <small>Aplikasi Manajemen DILo Malang</small>

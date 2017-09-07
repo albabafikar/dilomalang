@@ -15,9 +15,8 @@ AppBundle\Entity\User:
         password:
             type: string
             length: 255
-        jobdesk:
-            type: integer
         status:
             type: integer
-            nullable: true
+        isValidated:
+            type: integer
     lifecycleCallbacks: {  }

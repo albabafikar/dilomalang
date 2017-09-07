@@ -27,12 +27,12 @@ class User
     /**
      * @var int
      */
-    private $jobdesk;
+    private $status;
 
     /**
      * @var int
      */
-    private $status;
+    private $isValidated;
 
 
     /**
@@ -92,29 +92,6 @@ class User
     }
 
     /**
-     * Set jobdesk
-     *
-     * @param string $jobdesk
-     * @return User
-     */
-    public function setJobdesk($jobdesk)
-    {
-        $this->jobdesk = $jobdesk;
-
-        return $this;
-    }
-
-    /**
-     * Get jobdesk
-     *
-     * @return string 
-     */
-    public function getJobdesk()
-    {
-        return $this->jobdesk;
-    }
-
-    /**
      * Set status
      *
      * @param string $status
@@ -128,12 +105,29 @@ class User
     }
 
     /**
-     * Get jobdesk
-     *
-     * @return string
+     * @return int
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * @param $isValidated
+     * @return $this
+     */
+    public function setIsValidated($isValidated)
+    {
+        $this->isValidated = $isValidated;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIsValidated()
+    {
+        return $this->isValidated;
     }
 }

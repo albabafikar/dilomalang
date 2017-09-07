@@ -83,78 +83,136 @@
                             <span>Home</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="menu-toggle bg-yellow">
-                            <span>Kegiatan</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="{{ path('app_event_create') }}"><span>Pengajuan</span></a>
-                            </li>
-                            <li>
-                                <a href="{{ path('app_event_list') }}"><span>Daftar Kegiatan</span></a>
-                            </li>
+                    {% if ((app.session.get('status')['value']) == 3) %}
+                        <li>
+                            <a href="#" class="menu-toggle bg-yellow">
+                                <span>Kegiatan</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="{{ path('app_event_create') }}"><span>Pengajuan</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('app_event_list') }}"><span>Daftar Kegiatan</span></a>
+                                </li>
 
-                            <li>
-                                <a href="{{ path('app_report_create') }}"><span>Input Laporan Kegiatan</span></a>
-                            </li>
-                            <li>
-                                <a href="{{ path('app_report_list') }}"><span>Daftar Laporan Kegiatan</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="menu-toggle bg-orange">
-                            <span>Operasional</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="{{ path('app_input_operational') }}"><span>Pengajuan</span></a>
-                            </li>
-                            <li>
-                                <a href="{{ path('app_operational_list') }}"><span>Daftar Pengajuan</span></a>
-                            </li>
+                                <li>
+                                    <a href="{{ path('app_report_create') }}"><span>Input Laporan Kegiatan</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('app_report_list') }}"><span>Daftar Laporan Kegiatan</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-toggle bg-orange">
+                                <span>Operasional</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="{{ path('app_input_operational') }}"><span>Pengajuan</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('app_operational_list') }}"><span>Daftar Pengajuan</span></a>
+                                </li>
 
-                            <li>
-                                <a href="{{ path('app_reportoperation_input') }}"><span>Input Laporan Keuangan</span></a>
-                            </li>
-                             <li>
-                                <a href="{{ path('app_reportoperation_list') }}"><span>Daftar Laporan Keuangan</span></a>
-                            </li>   
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="menu-toggle bg-deep-orange">
-                            <span>Pengunjung</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="{{ path('app_member_create') }}"><span>Input Data Pengunjung</span></a>
-                            </li>
-                            <li>
-                                <a href="{{ path('app_member_list') }}"><span>Daftar Pengunjung</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="menu-toggle bg-purple">
-                            <span>Laporan Manajemen</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="{{ path('app_management_create') }}"><span>Input Data Laporan Manajemen</span></a>
-                            </li>
-                            <li>
-                                <a href="{{ path('app_management_list') }}"><span>Daftar Laporan Manajemen</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="{{ path('app_user_list') }}" class="menu-toggle bg-green">
-                            <span>User Management</span>
-                        </a>
+                                <li>
+                                    <a href="{{ path('app_reportoperation_input') }}"><span>Input Laporan Keuangan</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('app_reportoperation_list') }}"><span>Daftar Laporan Keuangan</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-toggle bg-deep-orange">
+                                <span>Pengunjung</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="{{ path('app_member_create') }}"><span>Input Data Pengunjung</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('app_member_list') }}"><span>Daftar Pengunjung</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-toggle bg-purple">
+                                <span>Laporan Manajemen</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="{{ path('app_management_create') }}"><span>Input Data Laporan Manajemen</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('app_management_list') }}"><span>Daftar Laporan Manajemen</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_user_list') }}" class="menu-toggle bg-green">
+                                <span>User Management</span>
+                            </a>
 
-                    </li>
+                        </li>
+                    {% elseif ((app.session.get('status')['value']) == 2) %}
+                        <li>
+                            <a href="#" class="menu-toggle bg-yellow">
+                                <span>Kegiatan</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="{{ path('app_event_create') }}"><span>Pengajuan</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('app_event_list') }}"><span>Daftar Kegiatan</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ path('app_report_create') }}"><span>Input Laporan Kegiatan</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('app_report_list') }}"><span>Daftar Laporan Kegiatan</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% elseif ((app.session.get('status')['value']) == 1) %}
+                        <li>
+                            <a href="#" class="menu-toggle bg-orange">
+                                <span>Operasional</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="{{ path('app_input_operational') }}"><span>Pengajuan</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('app_operational_list') }}"><span>Daftar Pengajuan</span></a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ path('app_reportoperation_input') }}"><span>Input Laporan Keuangan</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('app_reportoperation_list') }}"><span>Daftar Laporan Keuangan</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% elseif ((app.session.get('status')['value']) == 4) %}
+                        <li>
+                            <a href="#" class="menu-toggle bg-purple">
+                                <span>Laporan Manajemen</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="{{ path('app_management_create') }}"><span>Input Data Laporan Manajemen</span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('app_management_list') }}"><span>Daftar Laporan Manajemen</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
 

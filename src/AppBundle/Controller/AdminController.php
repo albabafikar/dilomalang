@@ -13,10 +13,12 @@ class AdminController extends Controller
       $em = $this->getDoctrine()->getEntityManager();
 
       if($request->getMethod() == 'POST') {
+
           $user = new User();
           $user->setUsername($request->get('username'));
           $user->setPassword($request->get('password'));
-          $user->setJobDesk($request->get('job_desk'));
+          $user->setStatus($request->get('status'));
+          $user->setIsValidated(0);
 
           $em->persist($user);
           $em->flush();
@@ -43,6 +45,7 @@ class AdminController extends Controller
 
                         $session->set('uid', ['value' => $data->getId()]);
                         $session->set('username', ['value' => $username]);
+                        $session->set('status',['value'=>$data->getStatus()]);
 
                     } else {
                         return $this->redirect($this->generateUrl('app_login'));
@@ -52,10 +55,19 @@ class AdminController extends Controller
                 }
             }
 
-            return $this->redirect($this->generateUrl('app_index'));
-        }
+           if($data->getIsValidated() == 0) {
+                $this->get('session')->getFlashBag()->add(
+                    'message_alert',
+                    'tunggu konfirmasi admin terlebih dahulu'
+                );
 
-        return $this->render('AppBundle:default:login.html.twig');
+               return $this->redirect($this->generateUrl('app_login'));
+           }else {
+               return $this->redirect($this->generateUrl('app_index'));
+           }
+       }
+
+      return $this->render('AppBundle:default:login.html.twig');
   } 
 
   public function indexAction(Request $request)

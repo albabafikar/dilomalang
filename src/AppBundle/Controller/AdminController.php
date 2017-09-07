@@ -78,4 +78,13 @@ class AdminController extends Controller
 
       return $this->redirect($this->generateUrl('app_login'));
   }
+
+    public function getAllUserAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $data = $em->getRepository(User::class)->findAll();
+
+        return $this->render('AppBundle:user:list-user.html.twig',['data'=>$data]);
+    }
 }

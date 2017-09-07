@@ -1,0 +1,14 @@
+app_user_list:
+   path: /list-user
+   defaults:
+      _controller: AppBundle:Admin:getAllUser
+
+#app_member_update:
+#    path: /update-member/{id}
+#    defaults:
+#      _controller: AppBundle:Member:updateMember
+#
+#app_member_delete:
+#   path: /delete-member/{id}
+#   defaults:
+#       _controller: AppBundle:Member:de  leteMember

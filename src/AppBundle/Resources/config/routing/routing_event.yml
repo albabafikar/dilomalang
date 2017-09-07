@@ -21,4 +21,9 @@ app_event_update:
 app_event_view:
     path: /view-event/{id}
     defaults:
-      _controller: AppBundle:Event:viewEvent      
+      _controller: AppBundle:Event:viewEvent
+
+app_event_all:
+  path: /event-all/{id}
+  defaults:
+      _controller: AppBundle:Event:allEvent

@@ -103,4 +103,13 @@ class EventController extends Controller
     ]);
 }
 
+    public function EventAllAction($id)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $event = $em->getRepository(Events::class)->findAll();
+
+        return $this->render('OfficeBundle:admin:all-report-event.html.twig', ['event' => $event]);
+    }
+
 }

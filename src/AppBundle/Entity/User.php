@@ -25,9 +25,14 @@ class User
     private $password;
 
     /**
-     * @var string
+     * @var int
      */
     private $jobdesk;
+
+    /**
+     * @var int
+     */
+    private $status;
 
 
     /**
@@ -107,5 +112,28 @@ class User
     public function getJobdesk()
     {
         return $this->jobdesk;
+    }
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     * @return User
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get jobdesk
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 }

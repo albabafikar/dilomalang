@@ -6,6 +6,10 @@ app_event:
     resource: "@AppBundle/Resources/config/routing/routing_event.yml"
     prefix: /event
 
+app_user:
+    resource: "@AppBundle/Resources/config/routing/routing_user.yml"
+    prefix: /user
+
 app_report:
     resource: "@AppBundle/Resources/config/routing/routing_report.yml"
     prefix: /report
@@ -43,6 +47,10 @@ app_logout:
       _controller: AppBundle:Admin:logout         
 
 
+app_user:
+    path: /user
+    defaults :
+      _controller: AppBunddle:Admin:user
 #  app_login:
 #     path: /login
 #     defaults:
